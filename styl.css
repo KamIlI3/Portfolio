@@ -2,10 +2,12 @@
     font-family: 'Merriweather', serif;
   }
   body{
+    margin: 0;
     justify-content: center;
     text-align: center;
     background-image: url("img/background.jpg");
     color: white;
+    align-items: center;
   }
 
 /* Strona główna */
@@ -21,8 +23,7 @@ a{
     letter-spacing: 0.1vw;
     font-size: larger;
     text-decoration: none;
-    color: aliceblue;
-    border: 1px solid black;
+    color: aquamarine;
 }
 .logo{
   width: 5.2vw;
@@ -35,24 +36,38 @@ a{
   height: 70vh;
 }
 #ikony_umiejetnosci{
-  display: flex;
+  width: 50vw;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  display: grid;
-  grid-template-columns: auto;
+  position: relative;
 }
 
 #present {
-    width: 100px;
-    height: 100px;
-    transition: background-image 2s ease-in-out;
+  width: 100px;
+  height: 100px;
+  position: absolute; /* Dodaj nowy styl position: absolute; */
+  left: 50%; /* Przesuń div "present" do środka poziomo */
+  top: 35%;
+  transform: translate(-50%, -50%); 
+  transition: background-image 2s ease-in-out;
 }
-.image1 {
-    background-image: url('img/html.png');
+.image1{
+  background-image: url('img/html.png');
+} 
+.image2{
+  background-image: url('img/css.png');
 }
-.image2 {
-    background-image: url('img/css.png');
-}
-.image3 {
+ .image3 {
     background-image: url('img/js.png');
 }
+
+ 
+
+#mapa_mysli{
+  width: 50vw;
+}
+
+
+
