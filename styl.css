@@ -1,0 +1,58 @@
+* {
+    font-family: 'Merriweather', serif;
+  }
+  body{
+    justify-content: center;
+    text-align: center;
+    background-image: url("img/background.jpg");
+    color: white;
+  }
+
+/* Strona główna */
+
+#menu_bar{
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    padding: 3vh;
+    height: 5vh;
+}
+a{
+    margin-left: 7vw;
+    letter-spacing: 0.1vw;
+    font-size: larger;
+    text-decoration: none;
+    color: aliceblue;
+    border: 1px solid black;
+}
+.logo{
+  width: 5.2vw;
+  height: 10.7vh;
+}
+
+#main_section{
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 70vh;
+}
+#ikony_umiejetnosci{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+#present {
+    width: 100px;
+    height: 100px;
+    transition: background-image 2s ease-in-out;
+}
+.image1 {
+    background-image: url('img/html.png');
+}
+.image2 {
+    background-image: url('img/css.png');
+}
+.image3 {
+    background-image: url('img/js.png');
+}
