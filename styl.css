@@ -43,31 +43,59 @@ a{
   align-items: center;
   position: relative;
 }
+p{
+  margin: 3vb;
+}
 
 #present {
-  width: 100px;
-  height: 100px;
-  position: absolute; /* Dodaj nowy styl position: absolute; */
-  left: 50%; /* Przesuń div "present" do środka poziomo */
+  width: 5.2vw;
+  height: 10.7vh;
+  position: absolute; 
+  left: 50%; 
   top: 35%;
   transform: translate(-50%, -50%); 
   transition: background-image 2s ease-in-out;
 }
 .image1{
   background-image: url('img/html.png');
+  background-size: 5.2vw 10.7vh; 
 } 
 .image2{
   background-image: url('img/css.png');
+  background-size: 5.2vw 10.7vh; 
 }
  .image3 {
     background-image: url('img/js.png');
+    background-size: 5.2vw 10.7vh; 
 }
-
- 
-
+.future{
+  position: relative;
+}
 #mapa_mysli{
   width: 50vw;
 }
 
 
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  #ikony_umiejetnosci {
+    width: 80vw; 
+  }
+
+  #main_section {
+    grid-template-columns: 1fr; 
+  }
+  #present{
+    position: relative;
+  }
+  #mapa_mysli{
+    position: relative;
+    left: 15vw;
+  }
+  
+}
 
