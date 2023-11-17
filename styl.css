@@ -17,6 +17,11 @@
     margin-bottom: 7vh;
     padding: 3vh;
     height: 5vh;
+    
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
 }
 a{
     margin-left: 7vw;
@@ -43,8 +48,9 @@ a{
   align-items: center;
   position: relative;
 }
-p{
-  margin: 3vb;
+h3{
+  margin: 0 3vw 0 3vw;
+  position: relative;
 }
 
 #present {
@@ -70,6 +76,7 @@ p{
 }
 .future{
   position: relative;
+  bottom: 55%;
 }
 #mapa_mysli{
   width: 50vw;
@@ -84,6 +91,7 @@ p{
 
   #ikony_umiejetnosci {
     width: 80vw; 
+    left: 10vw;
   }
 
   #main_section {
@@ -94,8 +102,11 @@ p{
   }
   #mapa_mysli{
     position: relative;
-    left: 15vw;
+    left: 27vw;
+  }
+  .future{
+    position: relative;
+    top: 20%;
   }
   
 }
-
