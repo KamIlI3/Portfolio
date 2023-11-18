@@ -13,15 +13,10 @@
 /* Strona główna */
 
 #menu_bar{
-    margin-top: 7vh;
-    margin-bottom: 7vh;
+    margin-top:  3vh;
+    margin-bottom: 3vh;
     padding: 3vh;
     height: 5vh;
-    
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
 }
 a{
     margin-left: 7vw;
@@ -82,16 +77,26 @@ h3{
   width: 50vw;
 }
 
+/*Podstrona PROJEKTY*/
+#projekt_bar{
+  position: absolute;
+  background-color: blue;
+  width: 10vw;
+  height: 83vh;
+  opacity: 0.2;
+  border-radius: 20px;
+}
 
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 1040px) {
   body {
     font-size: 14px;
   }
 
   #ikony_umiejetnosci {
     width: 80vw; 
-    left: 10vw;
+    left: 14vw;
   }
 
   #main_section {
@@ -102,7 +107,7 @@ h3{
   }
   #mapa_mysli{
     position: relative;
-    left: 27vw;
+    left: 29vw;
   }
   .future{
     position: relative;
@@ -110,3 +115,4 @@ h3{
   }
   
 }
+

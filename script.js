@@ -41,3 +41,5 @@ function backToDefult(element){
     element.style.color = element.dataset.originalColor; //powrót do pierwotnego koloru czcionki
 }
 
+
+
