@@ -7,8 +7,3 @@ function showProject(projectId){
     var selectedProject = document.getElementById(projectId);
         selectedProject.style.display = 'block';
 }
-
-function aa(){
-    const wprowadzenie = document.getElementById("wprowadzenie");
-    wprowadzenie.style.display = "block";
-}

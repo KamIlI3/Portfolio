@@ -12,16 +12,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styl.css">
-    <title>Portfolio</title>
+    <title>Jak się uczę</title>
 </head>
 <body>
     <div class="div" id="menu_bar">
-        <a href="Omnie.html" class="link" onmouseover="fontColorOfA(this)" onmouseleave="backToDefult(this)">O mnie</a>
-        <a href="Projekty.html"  class="link" onmouseover="fontColorOfA(this)" onmouseleave="backToDefult(this)">Projekty</a>
-        <a href="JakSieUcze.html"  class="link" onmouseover="fontColorOfA(this)" onmouseleave="backToDefult(this)">Jak się uczę</a>
-        <a href="Kontakt.html"  class="link" onmouseover="fontColorOfA(this)" onmouseleave="backToDefult(this)">Kontakt</a>
+        <a href="Omnie.html" class="link" >O mnie</a>
+        <a href="Projekty.html"  class="link" >Projekty</a>
+        <a href="JakSieUcze.html"  class="link" >Jak się uczę</a>
+        <a href="Kontakt.html"  class="link" >Kontakt</a>
     </div>
-<section>
+<section id="script_presentation">
+    <h3>Zaczynając naukę języków takich jak: CSS3, HTML5 czy JavaScript musiałem obrać pewną scieżkę, którą będę podążał, aby uczyć się tworzyć strony. 
+        Uważałem, że muszę mieć minimalna wiedzę teoretyczną, aby móc używać jej w tej ciekawszej i efektywniejszej części praktycznej.
+        Pomimo pewnych podstaw, które już miałem dzięki szkole średniej zdobytej przez egzamin zawodowy, 
+        nie była to wiedza, która pozwoliłaby mi czuć się pewnie w tej dziedzinie. Tym samym naturalnym krokiem dla mnie były różnego rodzaju poradniki i kursy na YouTube.
+        Po zdobyciu pewnej wiedzy teoretycznej zdecydowałem się przenieść to na zadania praktyczne, czego efektem są poniższe zadania czy projekty.
+        Poniższa prezentacja zrealizowana na podstawie wyboru, pozwala przetestować wybrane krótsze skrypty, będące efektem mojej pracy oraz czasu poświęconego na nauke.
+    </h3>
+    <label for="zadania_select">Wybierz zadanie:</label>
+    <select name="zadania" id="zadania_select">
+        <option value="kosztBiletu" id="kosztBiletu">Koszt Biletu</option>
+        <option value="kalkulator" id="kalkulator">Kalkulator</option>
+    </select>
     
 </section>
     
@@ -30,6 +42,6 @@
         <a href="https://www.instagram.com/kami1.gk/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
         <a href="https://twitter.com/ex3ss" target="_blank"><i class="fa fa-times fa-2xl"></i></a>
     </div>
-    <script src="js/script_menuBar.js"></script>
+<script src="script_zadania.js"></script>
 </body>
 </html>
