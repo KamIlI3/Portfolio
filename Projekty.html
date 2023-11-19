@@ -22,10 +22,27 @@
         <a href="Kontakt.html"  class="link" onmouseover="fontColorOfA(this)" onmouseleave="backToDefult(this)">Kontakt</a>
     </div>
     <div id="projekt_bar">
-        <h2>Moje projekty:</h2>
+        <h2 onclick="showProject('wprowadzenie')">Moje projekty:</h2>
+            <button id="bodyChief_project_button" class="button_project" onclick="showProject('bodyChief_description')"></button>
+            <button id="kryptoPage_project_button" class="button_project" onclick="showProject('kryptoPage_description')"></button>
+
     </div>
 <section id="project_description">
-    
+    <div id="wprowadzenie" class="description">
+        <h3>Witaj na stronie, na której prezentuję moje najnowsze projekty i osiągnięcia. 
+            Poniżej znajdziesz krótkie opisy oraz miniaturki moich najważniejszych prac. 
+            Z racji, że są to moje początki to nie ma ich dużo. 
+            Jednak jestem przekonany, że z miesiąca na miesiąc będzie ich coraz więcej 
+            oraz z każdym kolejnym projektem lepsze jakościowo. <br>
+            <b><i>Kliknij na interesujący Cię projekt, aby dowiedzieć się więcej!</i></b>
+        </h3>
+    </div>
+    <div id="bodyChief_description" class="description">
+       <p>opis projektu body chief</p> 
+    </div>
+    <div id="kryptoPage_description" class="description">
+        <p>opis strony realizowanej w ramach zajeć</p>
+    </div>
 </section>
     
     <div class="div" id="social_media">
@@ -33,6 +50,7 @@
         <a href="https://www.instagram.com/kami1.gk/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
         <a href="https://twitter.com/ex3ss" target="_blank"><i class="fa fa-times fa-2xl"></i></a>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script_menuBar.js"></script>
+    <script src="js/script_projekty.js"></script>
 </body>
 </html>

@@ -30,16 +30,3 @@ function logoSwipe(){
     future[futureIdx-1].style.display = "block"; // wyświetlenie diva o indeksie futureIdx-1
     setTimeout(logoSwipe, 2500); //ustawienie cooldown na funkcje 2,5s
 }
-
-//Zmiana tła linków
-function fontColorOfA(element){
-    element.dataset.originalColor = element.style.color; //zapisanie obecnego koloru czcionki do zmiennej
-    element.style.color = 'rgb(146, 197, 4)'; //zmiana koloru czcionki
-}
-//Powrót do ustawień domyślnych
-function backToDefult(element){
-    element.style.color = element.dataset.originalColor; //powrót do pierwotnego koloru czcionki
-}
-
-
-
