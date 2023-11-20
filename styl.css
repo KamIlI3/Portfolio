@@ -128,7 +128,46 @@ h3{
   border-bottom: solid 2px;
   border-color: rgba( 175, 255, 212, 0.5);
   border-radius: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
+.description{
+  padding: 2vh 3vw 2vh 3vw;
+}
+.description_img{
+  width: 40vw;
+  height: 35vh;
+  float: left; 
+  margin: 0 20px 20px 0;
+  border-radius: 10px;
+}
+.description_h2{
+  color: red;
+  display: block;
+  text-align: left;
+  clear: both;
+}
+.description_h4{
+  clear: both;
+  color: rgb(145, 255, 255);
+}
+.description_img + .description_p {
+  margin-top: 15vh;
+}
+#project_description::-webkit-scrollbar {
+  width: 12px;
+}
+
+#project_description::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 28, 28);
+  border-radius: 50px;
+}
+
+#project_description::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.5;
+}
+
 #wprowadzenie{
   padding: 5vh 10vw;
   color: whitesmoke;
