@@ -36,4 +36,6 @@ function setVisibilityState(projectId) {
   } else {
     showProject('wprowadzenie');
   }
+
+
   
