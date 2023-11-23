@@ -192,6 +192,39 @@ b{
   width: 100vw;
   height: 78vh;
 }
+#text{
+  width: 404px;
+  height: 75px;
+  text-align: right;
+  font-size: 50px;
+  border-color: black;
+}
+.btn{
+  width: 100px;
+  height: 75px;
+  margin-top: 3px;
+  font-weight: 600;
+  font-size: large;
+}
+#cl{
+  width: 308px;
+  background-color: rgb(177, 173, 173);
+  color: black;
+}
+#zero, #seven, #eight, #nine, #four, #five, #six, #one, #two, #three, #dot {
+  background-color: rgb(82, 80, 80);
+  color: black;
+  
+}
+#zero{
+  width: 204px;
+}
+#sub, #mul, #add, #minus, #equal{
+  background-color: rgb(255, 110, 57);
+}
+.zadania{
+  display: none;
+}
 
 
 
