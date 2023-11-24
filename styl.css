@@ -225,7 +225,9 @@ b{
 .zadania{
   display: none;
 }
-
+#zadania_select{
+  margin-top: 5vh;
+}
 
 
 @media only screen and (max-width: 1040px) {

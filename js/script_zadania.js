@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     wynik.innerHTML = "Koszt pobytu w Aquaparku bez rabatu wyniesie: " + kosztCalosciowy + " zł.";
                 }
             }
-            
+        }  
 
       //Kalkulator
         var text = document.getElementById("text");
@@ -528,35 +528,37 @@ document.addEventListener("DOMContentLoaded", function() {
         char +=2;
         wynikszyfr.innerHTML += String.fromCharCode(char);
     }else{
-        console.log("To nie alfabet!");
+        wynik.innerHTML = "To nie alfabet!";
     }
 
 }
 
+    /*    const tabliceResult1 = document.getElementById("tabliceResult1");
+
         var tab1 = [7, 3, 1, 6, 9, 5, 4, 10, 2, 2];
         tab1[6]=12;
-        document.write("Tab1: " + tab1 + "<br>");
+        tabliceResult1.innerHTML += "Tab1: " + tab1 + "<br>";
         
         var tab2 = Array(10);
         tab2 = tab1;
-        document.write("Tab2: " + tab2 + "<br>");
+        tabliceResult1.innerHTML += "Tab2: " + tab2 + "<br>";
         
         var tab3 = Array(10);
         for (var i = 0; i<tab3.length; i++){
             tab3[i] = tab1[i] + tab2[i];
         }
         
-        document.write("Tab3: " + tab3 + "<br>");
+        tabliceResult1.innerHTML += "Tab3: " + tab3 + "<br>";
         
         tab2 = tab1.reverse();
-        document.write("Tab2 reverse: " + tab2 + "<br>");
+        tabliceResult1.innerHTML += "Tab2 reverse: " + tab2 + "<br>";
         
         var tablica1 = Array(10);
         for (var i = 0; i<tablica1.length; i++){
             //tablica1[i] = Number.parseInt(prompt("Podaj zawartość tablicy:"));
             tablica1[i] = Math.floor(Math.random() * (100-1)+1);
         }
-        document.write("Tablica1 podana przez użytkownika: " + tablica1 + "<br>");
+        tabliceResult1.innerHTML += "Tablica1 podana przez użytkownika: " + tablica1 + "<br>";
         
         var i = 0;
         var min = tablica1[0];
@@ -566,7 +568,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             i++;
         }
-        document.write("Najmniejsza wartość w tablicy to: " + min + "<br>");
+        tabliceResult1.innerHTML += "Najmniejsza wartość w tablicy to: " + min + "<br>";
         
         var j = 0;
         var max = tablica1[0];
@@ -576,7 +578,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             j++;
         }
-        document.write("Największa wartość w tablicy to: " + max + "<br>");
+        tabliceResult1.innerHTML += "Największa wartość w tablicy to: " + max + "<br>";
         
         var suma = 0;
         var sr = 0;
@@ -584,7 +586,7 @@ document.addEventListener("DOMContentLoaded", function() {
             suma += tablica1[i];
             sr = suma/tablica1.length
         }
-        document.write("Średnia wartość wszystkich elementów tablicy wynosi: " + sr + "<br>");
+        tabliceResult1.innerHTML += "Średnia wartość wszystkich elementów tablicy wynosi: " + sr + "<br>";
         
         var howMany = 0;
         for (var i = 0; i<tablica1.length; i++){
@@ -592,38 +594,37 @@ document.addEventListener("DOMContentLoaded", function() {
                 howMany += 1;
             }
         }
-        document.write("W tablicy znajduje sie " + howMany + " wartości 3" + "<br>");
+        tabliceResult1.innerHTML += "W tablicy znajduje sie " + howMany + " wartości 3" + "<br>";
         
-        tablica2 = tablica1.sort();
-        document.write("Tablica1 po posortowaniu " + tablica1 +  "<br>");
+        var tablica_2 = tablica1.sort();
+        tabliceResult1.innerHTML += "Tablica1 po posortowaniu " + tablica_2 +  "<br>";
         
         var mediana = 0;
         var size = Number.parseInt(tablica1.length);
         
-        console.log(size);
         if (size%2==1){
             var srodek = Math.floor(size/2);
             mediana = tablica1[srodek];
-            document.write("Mediana elementów tablicy to: " + mediana + "<br>");
+            tabliceResult1.innerHTML += "Mediana elementów tablicy to: " + mediana + "<br>";
             }else{
                 var srodek = size/2;
                 //console.log(tablica1[half-1]);
                 mediana = (tablica1[srodek] + (tablica1[srodek-1]))/2;
-                document.write("Mediana elementów tablicy to: " + mediana + "<br>");
+                tabliceResult1.innerHTML += "Mediana elementów tablicy to: " + mediana + "<br>";
             }
         
         for(var i = 0; i<3; i++){
-            document.write('Trzy najmniejsze elementy: ' + tablica2[i]+ "<br>");
+            tabliceResult1.innerHTML += 'Trzy najmniejsze elementy: ' + tablica_2[i]+ "<br>";
         }
         document.write("<br>");
-        for(var i = tablica2.length-1; i>tablica2.length-4; i--){
-            document.write('Trzy największe elementy: ' + tablica2[i]+ "<br>");
+        for(var i = tablica_2.length-1; i>tablica_2.length-4; i--){
+            tabliceResult1.innerHTML += 'Trzy największe elementy: ' + tablica_2[i]+ "<br>";
         }
         
         for(var i = 0; i<tab2.length; i++){
             tab2[i] *= tab2[i];
         }
-        document.write("<br>" + "Tablica TAB2 z wartościami podniesionymi do kwadratu: " + tab2);
+        tabliceResult1.innerHTML += "<br>" + "Tablica TAB2 z wartościami podniesionymi do kwadratu: " + tab2;
         
         var parzyste = 0;
         var nieparzyste = 0;
@@ -633,7 +634,7 @@ document.addEventListener("DOMContentLoaded", function() {
             else
             nieparzyste += 1;
         }
-        document.write("<br>" + "Ilość elementów parzystych w Tablica1: " + parzyste + "<br>" + "Ilość nieparzystych: " + nieparzyste + "<br>");
+        tabliceResult1.innerHTML += "<br>" + "Ilość elementów parzystych w Tablica1: " + parzyste + "<br>" + "Ilość nieparzystych: " + nieparzyste + "<br>";
         
         
         var podzielne3 = 0;
@@ -641,7 +642,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if(tablica1[x]%3==0)
                 podzielne3 +=1;
         }
-        document.write( "Ilość elementów podzielnych przez 3:  " + podzielne3 + "<br>" );
+        tabliceResult1.innerHTML += "Ilość elementów podzielnych przez 3:  " + podzielne3 + "<br>" ;
         
         
 
@@ -649,40 +650,40 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let i=0; i<tab4.length; i++){
           tab4[i] = Math.floor(Math.random()*(1000));
         }
-        document.write("<br>Tablica 100-elementowa: " + tab4 + "<br>");
+        tabliceResult1.innerHTML += "<br>Tablica 100-elementowa: " + tab4 + "<br>";
       
-        document.write("<br>Parzyste: " +  "<br>");
+        tabliceResult1.innerHTML += "<br>Parzyste: " +  "<br>";
         for(let i in tab4){
           if(tab4[i]%2==0)
-              document.write(tab4[i] + ", ");
+          tabliceResult1.innerHTML += tab4[i] + ", ";
         }
       
-        document.write("<br> Elementy o nieparzystych indeksach: " +  "<br>");
+        tabliceResult1.innerHTML +="<br> Elementy o nieparzystych indeksach: " +  "<br>";
         for(let i in tab4){
           if(tab4.indexOf(tab4[i])%2==1)
-              document.write(tab4[i] + ", ");
+          tabliceResult1.innerHTML += tab4[i] + ", ";
         }
-        document.write("<br> W przedziale <5,15): " +  "<br>");
+        tabliceResult1.innerHTML += "<br> W przedziale <5,15): " +  "<br>";
         var wPrzedziale = 0;
         var przedzial = document.getElementById("przedzial");
         for (let i in tab4){
           if((tab4[i]>=5)&(tab4[i]<15)){
               wPrzedziale += 1;
-              przedzial.innerHTML = "<br>W przedziale znajduje sie liczb: " + wPrzedziale;
-              document.write(tab4[i] + ", ");
+              tabliceResult1.innerHTML = "<br>W przedziale znajduje sie liczb: " + wPrzedziale;
+              tabliceResult1.innerHTML += tab4[i] + ", ";
           }
         }
       
-      var a = Number.parseInt(prompt("Podaj wartość a"));
+      //var a = Number.parseInt(prompt("Podaj wartość a"));
       var roznica = 0;
       var najmniejsza = Math.abs(a-tab4[0]);
       var tymczasowa = tab4[0];
       const closer = document.getElementById("closer");
-      document.write("<br>a: " + a + "<br>");
+      tabliceResult1.innerHTML += "<br>a: " + a + "<br>";
       for (let x in tab4){
           roznica = Math.abs(a - tab4[x]);
           if(tab4[x]==a){
-              document.write("<br>Najbliższa wartość liczby " + a + " to " + tab4[x] + " o indeksie " + tab4.indexOf(tab4[x]));
+            tabliceResult1.innerHTML +="<br>Najbliższa wartość liczby " + a + " to " + tab4[x] + " o indeksie " + tab4.indexOf(tab4[x]);
               break;
           }
           
@@ -718,7 +719,7 @@ document.addEventListener("DOMContentLoaded", function() {
           nastepnik = tab4[0];
       }
       
-      document.write("<br>Najmniejsza wartość w tablicy to: " + min + ". Jej poprzednik to: " + poprzednik +", a następnik to: " + nastepnik + "<br>");
+      tabliceResult1.innerHTML +="<br>Najmniejsza wartość w tablicy to: " + min + ". Jej poprzednik to: " + poprzednik +", a następnik to: " + nastepnik + "<br>";
       
       const tab5 = Array();
       for(let i=0; i<tab4.length; i++){
@@ -726,7 +727,7 @@ document.addEventListener("DOMContentLoaded", function() {
               tab5.push(tab4[i]);
           }
       }
-      document.write("<br>Zawartość tablicy tab5: " + tab5 + "<br>");
+      tabliceResult1.innerHTML += "<br>Zawartość tablicy tab5: " + tab5 + "<br>";
       
       const tab6 = Array(10);
       var silnia = 0;
@@ -738,19 +739,17 @@ document.addEventListener("DOMContentLoaded", function() {
       };
       //document.write(obliczSilnia(5));
       
-      /*for(var i=0; i<tab6.length; i++){
+      for(var i=0; i<tab6.length; i++){
           tab6[i] = obliczSilnia(tab4[i]);
       }
-      document.write("Zawartość tablicy tab6: " + tab6 + "<br>");*/
+      document.write("Zawartość tablicy tab6: " + tab6 + "<br>");
       tab4.sort();
       tab4.reverse();
-      document.write("<br>Tablica posortowana malejąco: <br>" + tab4 + "<br>");
+      tabliceResult1.innerHTML +="<br>Tablica posortowana malejąco: <br>" + tab4 + "<br>";
       
       
       
-      // Funkcja do znalezienia elementów występujących przynajmniej 3 razy
-      // Rozwiązał ChatGPT 
-      // Do nauki
+      // Funkcja do znalezienia elementów występujących przynajmniej 2 razy
       function znajdzWystepowania(tab4) {
         var wystepowania = {};
         var wynik = [];
@@ -776,7 +775,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var elementyPrzynajmniej3Razy = znajdzWystepowania(tab4);
       
       // Wyświetlenie wyniku
-      console.log("<br>Elementy występujące przynajmniej 2 razy:", elementyPrzynajmniej3Razy);
+      tabliceResult1.innerHTML += "<br>Elementy występujące przynajmniej 2 razy:", elementyPrzynajmniej3Razy;
       
       const tablica = new Array(100);
       for (var i=2; i<tablica.length; i++){
@@ -784,22 +783,22 @@ document.addEventListener("DOMContentLoaded", function() {
           tablica[1] = 1;
           tablica[i] = tablica[i-2] + tablica[i-1];
       }
-      document.write("<br>Elementy tablicy odpowiadające pierwszym 100 wartosciom ciągu fibbonaciego: <br>" + tablica + "<br>");
+      tabliceResult1.innerHTML += "<br>Elementy tablicy odpowiadające pierwszym 100 wartosciom ciągu fibbonaciego: <br>" + tablica + "<br>";
       
       const tablica2 = Array(100);
       for(var i=0, j=2; i<tablica2.length; i++, j*=2){
           tablica2[i] = j;
       }
-      document.write("<br>Tablica uzupełniona kolejnymi potęgami 2: <br>" + tablica2 + "<br>");
+      tabliceResult1.innerHTML += "<br>Tablica uzupełniona kolejnymi potęgami 2: <br>" + tablica2 + "<br>";
       
       const tablica3 = Array(100);
       for(var i=0, j=3; i<tablica3.length; i++, j+=3){
           tablica3[i] = j;
       }
-      document.write("<br>Tablica uzupełniona wartościami zwiekszającymi sie co 3: <br>" + tablica3 + "<br>");
+      tabliceResult1.innerHTML += "<br>Tablica uzupełniona wartościami zwiekszającymi sie co 3: <br>" + tablica3 + "<br>";
 
         const zadania = document.getElementsByClassName("zadania");
         for (let i=0;i<zadania.length; i++){
             zadania[i].style.display = "none";
-        }
-    }
+        }*/
+    
