@@ -23,41 +23,39 @@
         <a href="Kontakt.html"  class="link" >Kontakt</a>
     </div>
 <section id="script_presentation">
-    <h3>
-        Zaczynając naukę języków takich jak: CSS3, HTML5 czy JavaScript, musiałem obrać pewną ścieżkę, którą będę podążał, aby uczyć się tworzyć strony. <br><br>
+    <h3 id="presentation_h3">Zaczynając naukę języków takich jak: CSS3, HTML5 czy JavaScript musiałem obrać pewną ścieżkę, którą będę podążał, aby uczyć się tworzyć strony.</h3>
+
+    <p class="presentation_p">Uważałem, że muszę mieć minimalną wiedzę teoretyczną, aby móc używać jej w tej ciekawszej i efektywniejszej części praktycznej.</p>
+
+    <p>Pomimo pewnych podstaw, które już miałem dzięki szkole średniej zdobytej przez egzamin zawodowy, nie była to wiedza, która pozwoliłaby mi czuć się pewnie w tej dziedzinie.</p>
+
+    <p>Tym samym naturalnym krokiem dla mnie były różnego rodzaju poradniki i kursy na YouTube.</p>
+
+    <p>Po zdobyciu pewnej wiedzy teoretycznej zdecydowałem się przenieść to na zadania praktyczne, czego efektem są poniższe zadania czy projekty.</p>
+
+    <p>Poniższa prezentacja zrealizowana na podstawie wyboru, pozwala przetestować wybrane krótsze skrypty, będące efektem mojej pracy oraz czasu poświęconego na naukę.</p>
     
-        <strong>Wiedza teoretyczna:</strong> Uważałem, że muszę mieć minimalną wiedzę teoretyczną, aby móc używać jej w tej ciekawszej i efektywniejszej części praktycznej. <br><br>
     
-        Pomimo pewnych podstaw, które już miałem dzięki szkole średniej zdobytej przez egzamin zawodowy, nie była to wiedza, która pozwoliłaby mi czuć się pewnie w tej dziedzinie. <br><br>
+        <label for="zadania_select" id="labelSelect">Wybierz zadanie:</label>
+        <select name="zadania" id="zadania_select" onchange="showSelectedDiv()">
+            <option value="option1" selected>Gra</option>
+            <option value="option2">Koszt Biletu</option>
+            <option value="option3">Kalkulator</option>
+            <option value="option4">Kalkulator2</option>
+            <option value="option5">Kalkulator3</option> 
+            <option value="option6">Obliczanie kosztów wesela</option>
+            <option value="option7">Oblicznie kosztów dostawy</option>
+            <option value="option8">Suma wybranych pól</option>
+            <option value="option9">Koszt ogłoszenia</option>
+            <option value="option10">Koszt zakupu cegieł</option>
+            <option value="option11">BMI</option>
+            <option value="option12">Kto jest starszy?</option>
+            <option value="option13">Rok przestępny</option>
+            <option value="option14">Siła hasła</option>
+            <option value="option15">Czy to trójkąt?</option>
+            <option value="option16">Szyfrowanie</option>
+        </select><br><br>
     
-        <strong>Kursy i poradniki:</strong> Tym samym naturalnym krokiem dla mnie były różnego rodzaju poradniki i kursy na YouTube. <br><br>
-    
-        Po zdobyciu pewnej wiedzy teoretycznej zdecydowałem się przenieść to na zadania praktyczne, czego efektem są poniższe zadania czy projekty. <br><br>
-    
-        Poniższa prezentacja zrealizowana na podstawie wyboru, pozwala przetestować wybrane krótsze skrypty, będące efektem mojej pracy oraz czasu poświęconego na naukę.
-    </h3>
-    
-    <label for="zadania_select">Wybierz zadanie:</label>
-    <select name="zadania" id="zadania_select" onchange="showSelectedDiv()">
-        <option value="option1" selected>Gra</option>
-        <option value="option2">Koszt Biletu</option>
-        <option value="option3">Kalkulator</option>
-        <option value="option4">Kalkulator2</option>
-        <option value="option5">Kalkulator3</option> 
-        <option value="option6">Obliczanie kosztów wesela</option>
-        <option value="option7">Oblicznie kosztów dostawy</option>
-        <option value="option8">Suma wybranych pól</option>
-        <option value="option9">Koszt ogłoszenia</option>
-        <option value="option10">Koszt zakupu cegieł</option>
-        <option value="option11">BMI</option>
-        <option value="option12">Kto jest starszy?</option>
-        <option value="option13">Rok przestępny</option>
-        <option value="option14">Siła hasła</option>
-        <option value="option15">Czy to trójkąt?</option>
-        <option value="option16">Szyfrowanie</option>
-        <option value="option17">Tablice</option>
-        <option value="option18">Tablice2</option>
-    </select>
 
     <div class="zadania" id="divoption1">
         <h1>Gra</h1>
@@ -81,15 +79,16 @@
     <div class="zadania" id="divoption2">
         <form action="kosztBiletow">
             <label for="ilosc_biletow_normalnych">Ilość biletów normalnych:</label>
-            <input type="text" id="ilosc_biletow_normalnych"><br>
+            <input type="text" id="ilosc_biletow_normalnych"><br><br>
             <label for="ilosc_biletow_ulgowych">Ilość biletów ulgowych:</label>
-            <input type="text" id="ilosc_biletow_ulgowych"><br>
+            <input type="text" id="ilosc_biletow_ulgowych"><br><br>
             <label for="ilosc_godzin">Ilość godzin:</label>
-            <input type="text" id="ilosc_godzin"><br>
+            <input type="text" id="ilosc_godzin"><br><br>
             <label for="karta_duzej_rodziny">Karta dużej rodziny?</label>
-            <input type="checkbox" name="" id="karta_duzej_rodziny"><br>
+            <input type="checkbox" name="" id="karta_duzej_rodziny"><br><br>
             <input type="button" value="Oblicz" onclick="aquapark()">
         </form>
+        <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption3">
@@ -122,7 +121,7 @@
             <p>Podaj a:</p>
             <input type="text" id="a">
             <p>Podaj b:</p>
-            <input type="text" id="b"><br>
+            <input type="text" id="b"><br><br>
             <button type="button" onclick="dodawanie()">Dodawanie</button>
             <button type="button" onclick="odejmowanie()">Odejmowanie</button>
             <button type="button" onclick="mnozenie()">Mnożenie</button>
@@ -130,10 +129,13 @@
             <button type="button" onclick="reszta()">Reszta z dzielenia</button>
             <button type="button" onclick="dzielenieCalkowite()">Dzielenie całkowite</button>
         </form>
+        <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption5">
+        <label for="pole1">Wartość a:</label>
         <input type="number" id="pole1">
+        <label for="pole2">Wartość b:</label>
         <input type="text" id="pole2"><br>
 
         <input type="radio" name="kalkulator" id="dodawanie">dodawanie<br>
@@ -144,75 +146,82 @@
         <button id="sumabtn" onclick="suma()">SUMA</button>
         <button id="podstawybtn" onclick="podstawy()">Podstawy</button>
         <button id="kalkulator" onclick="kalkulator()">KALKULATOR</button>
+        <div id="wynik"></div>
     </div>
     <div class="zadania" id="divoption6">
         <form action="wesele ">
             <p>Podaj liczbe gości:</p>
             <input type="text" id="goscie" onchange="wesele()" oninput="wesele()"><br>
-            <p>poprawiny?</p>
+            <p>Poprawiny?</p>
             <input type="checkbox" name="wesele1" id="poprawiny" onchange="wesele()">
         </form>
+        <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption7">
         <form action="dostawa">
             <p>Podaj ilość kilometrów:</p>
             <input type="text" id="km" onchange="dowozPizzy()" oninput="dowozPizzy()">
-            <p>jestem z Gdańska</p>
+            <p>Jestem z Gdańska</p>
             <input type="checkbox" name="pizza" id="gdansk" onchange="dowozPizzy()">
         </form>
+        <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption8">
         <form id="myForm">
             <label for="number1">Liczba 1:</label>
             <input type="text" id="number1" class="numberInput" oninput="obliczSume()"/>
-            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br>
+            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
     
             <label for="number2">Liczba 2:</label>
             <input type="text" id="number2" class="numberInput" oninput="obliczSume()"/>
-            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br>
+            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
     
             <label for="number3">Liczba 3:</label>
             <input type="text" id="number3" class="numberInput" oninput="obliczSume()"/>
-            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br>
+            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
     
             <label for="number4">Liczba 4:</label>
             <input type="text" id="number4" class="numberInput" oninput="obliczSume()"/>
-            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br>
+            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
     
             <label for="number5">Liczba 5:</label>
             <input type="text" id="number5" class="numberInput" oninput="obliczSume()"/>
-            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br>
+            <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
         </form>
+        <div id="wynik"></div>
     </div>
     <div class="zadania" id="divoption9">
         <form action="kosztOgloszenia">
             <label for="l_ogloszen">Liczba ogłoszeń:</label>
-            <input type="text" id="l_ogloszen">
+            <input type="text" id="l_ogloszen"><br><br>
             <label for="staly_klient">Stały klient</label>
-            <input type="checkbox" name="" id="staly_klient">
+            <input type="checkbox" name="" id="staly_klient"><br><br>
             <input type="button" value="Koszt ogłoszenia" onclick="kosztOgloszen()">
         </form>
+        <div id="wynik"></div>
     </div>
     <div class="zadania" id="divoption10">
         <form action="kosztCegiel">
             <label for="ilosc_cegiel">Ilość cegieł:</label>
             <input type="text" name="" id="ilosc_cegiel">
             <label for="cegla_premium">Cegła premium:</label>
-            <input type="checkbox" name="" id="cegla_premium"><br>
+            <input type="checkbox" name="" id="cegla_premium"><br><br>
             <label for="ileKm">Ile km?:</label>
-            <input type="text" id="ileKm">
+            <input type="text" id="ileKm"><br><br>
             <input type="button" value="Oblicz" onclick="kosztCegiel()">
         </form>
+        <div id="wynik"></div>
     </div>
     
     <div class="zadania" id="divoption11">
-        <label for="wzrostBmi">Podaj swój wzrost, aby obliczyć BMI:</label>
+        <label for="wzrostBmi">Podaj swój wzrost w cm, aby obliczyć BMI:</label><br>
         <input type="number" id="wzrostBmi"><br>
-        <label for="waga">Podaj swoją wagę:</label>
-        <input type="number" id="waga">
+        <label for="waga">Podaj swoją wagę:</label><br>
+        <input type="number" id="waga"><br><br>
         <input type="button" value="BMI" id="bmiBtn" onclick="bmi()">
+        <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption12">
@@ -220,45 +229,40 @@
     <label for="data1">Osoba nr.1</label>
     <input type="text" id="data1"><br>
     <label for="data2">Osoba nr.2</label>
-    <input type="text" id="data2"><br>
+    <input type="text" id="data2"><br><br>
     <button id="starszyBtn" onclick="starszy()">Kto starszy?</button>
+    <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption13">
-        <label for="przestepny">Podaj rok, aby sprawdzić czy byl przestępny:</label> 
+        <label for="przestepny">Podaj rok, aby sprawdzić czy byl przestępny:</label> <br>
     <input type="text" id="przestepny">
     <button onclick="przestepny()">Sprawdź</button><br>
+    <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption14">
         <p>Siła Hasła</p>
         <input type="password" name="password" id="haslo">
         <input type="button" name="password" id="silaBtn" value="Zaloguj" onclick="sila()"><br>
+        <div id="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption15">
         <p>Podaj wartości trzech boków, aby sprawdzić czy można z nich stworzyć trójkąt</p><br>
         <label for="bok1">Bok A:</label>
-        <input type="number" id="bok1">
+        <input type="number" id="bok1"><br>
         <label for="bok2">Bok B:</label>
-        <input type="number" id="bok2">
+        <input type="number" id="bok2"><br>
         <label for="bok3">Bok C:</label>
-        <input type="number" id="bok3">
+        <input type="number" id="bok3"><br><br>
         <button id="trojkatBtn" onclick="trojkat()">SPRAWDŹ</button>
-    
+        <div id="wynik"></div>
     </div>
     <div class="zadania" id="divoption16">
         <input type="text" id="szyfr1" onkeydown="szyfr()">
+        <div id="wynik"></div>
     </div>
-    
-    <div class="zadania" id="divoption17">
-        <div id="tabliceResult1"></div>
-    </div>
-    <div class="zadania" id="divoption18">
-        <div id="tabliceResult2"></div>
-    </div>
-    
-    <div id="wynik"></div>
     
 </section>
     

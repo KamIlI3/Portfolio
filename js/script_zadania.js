@@ -266,8 +266,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function podstawy(){
             var pole1 = document.getElementById("pole1");
-        var pole2 = document.getElementById("pole2");
-        var wynik = document.getElementById("wynik");
+            var pole2 = document.getElementById("pole2");
+            var wynik = document.getElementById("wynik");
             var iloraz = (pole1.value)*1/(pole2.value)*1;
             var roznica =(pole1.value)*1-(pole2.value)*1;
             var iloczyn = (pole1.value)*1*(pole2.value)*1;
@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function bmi(){
             const wzrostBmi = document.getElementById("wzrostBmi");
             const waga = document.getElementById("waga");
-            const wynikBmi = document.getElementById("wynikBmi");
+            const wynikBmi = document.getElementById("wynik");
             var bmi = Math.round((waga.value/(wzrostBmi.value*wzrostBmi.value))*10000);
             if(bmi > 25){
                 wynikBmi.innerHTML = "Twoje BMI wynosi: " + bmi + ". ZA DUŻO!"; 
@@ -429,8 +429,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       //Sprawdzanie kto jest starszy
         function starszy(){
-            const starszyBtn = document.getElementById("starszyBtn");
-            const wynikStarszy = document.getElementById("wynikStarszy"); 
+            const wynikStarszy = document.getElementById("wynik"); 
             const data1 = document.getElementById("data1").value;
             const data2 = document.getElementById("data2").value;
             const osoba1 =  Date.parse(data1);
@@ -449,6 +448,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //Sprawdzanie czy rok jest przestepny
         function przestepny(){
             const rok = Number.parseInt(document.getElementById("przestepny").value);
+            const wynik = document.getElementById("wynik");
             var tabLata = Array(600);
             var byl = true;
             for (var i=0, j=0; i<tabLata.length; i++, j+=4){
@@ -463,9 +463,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
             if(byl == true){
-                console.log("Ten rok jest przestępny.");
+                wynik.innerHTML = "Ten rok jest przestępny.";
             }else{
-                console.log("Ten rok nie jest przestępny.");
+                wynik.innerHTML = "Ten rok nie jest przestępny.";
             }
         }
 
@@ -473,20 +473,20 @@ document.addEventListener("DOMContentLoaded", function() {
         function sila(){
             const haslo = document.getElementById("haslo").value;
             var dlugoscHasla = haslo.length;
-            const wynikSila = document.getElementById("wynikSila");
+            const wynik = document.getElementById("wynik");
             if((dlugoscHasla <= 4)){
-                wynikSila.innerHTML = "Hasło słabe!!!";
+                wynik.innerHTML =  "Hasło słabe!!!";
             }else if (dlugoscHasla <= 8) {
                 if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) {
-                    wynikSila.innerHTML = "Hasło słabe - brak wymaganego elementu";
+                    wynik.innerHTML =  "Hasło słabe - brak wymaganego elementu";
                 } else {
-                    wynikSila.innerHTML = "Hasło średnie";
+                    wwynik.innerHTML =  "Hasło średnie";
                 }
             } else {
                 if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) {
                     wynikSila.innerHTML = "Hasło słabe - brak wymaganego elementu";
                 } else {
-                    wynikSila.innerHTML = "Hasło mocne";
+                    wynik.innerHTML =  "Hasło mocne";
                 }
             }
 
@@ -497,22 +497,22 @@ document.addEventListener("DOMContentLoaded", function() {
             const a = document.getElementById("bok1").value;
             const b = document.getElementById("bok2").value;
             const c = document.getElementById("bok3").value;
-            console.log(a+","+b+","+c);
+            var wynik = document.getElementById("wynik");
             if (a + b > c && a + c > b && b + c > a) {
-                console.log("Z podanych długości boków można utworzyć trójkąt.");
+                wynik.innerHTML = "Z podanych długości boków można utworzyć trójkąt.";
             } else {
-                console.log("Z podanych długości boków nie można utworzyć trójkąta.");
+                wynik.innerHTML = "Z podanych długości boków nie można utworzyć trójkąta.";
                 
                 if (a + b <= c) {
-                    console.log("Warunek a + b > c nie jest spełniony.");
+                    wynik.innerHTML = "Warunek a + b > c nie jest spełniony.";
                 }
                 
                 if (a + c <= b) {
-                    console.log("Warunek a + c > b nie jest spełniony.");
+                    wynik.innerHTML = "Warunek a + c > b nie jest spełniony.";
                 }
                 
                 if (b + c <= a) {
-                    console.log("Warunek b + c > a nie jest spełniony.");
+                    wynik.innerHTML = "Warunek b + c > a nie jest spełniony.";
                 }
             }
 
@@ -520,15 +520,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
       //Szyfrowanie znaków
         function szyfr(){
-            var szyfr = document.getElementById("szyfr1");
-            var wynikszyfr = document.getElementById("wynikszyfr");
+            var wynikszyfr = document.getElementById("wynik");
             var char = event.which || event.keyCode;
             //console.log(char);
     if(char >= 65 && char <= 90){
         char +=2;
         wynikszyfr.innerHTML += String.fromCharCode(char);
     }else{
-        wynik.innerHTML = "To nie alfabet!";
+        wynikszyfr.innerHTML = "To nie alfabet!";
     }
 
 }

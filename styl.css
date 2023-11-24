@@ -193,21 +193,21 @@ b{
   height: 78vh;
 }
 #text{
-  width: 404px;
-  height: 75px;
+  width: 14.3vw;
+  height: 5vh;
   text-align: right;
-  font-size: 50px;
+  font-size: 14px;
   border-color: black;
 }
 .btn{
-  width: 100px;
-  height: 75px;
+  width: 3.5vw;
+  height: 5vh;
   margin-top: 3px;
   font-weight: 600;
   font-size: large;
 }
 #cl{
-  width: 308px;
+  width: 11vw;
   background-color: rgb(177, 173, 173);
   color: black;
 }
@@ -217,7 +217,7 @@ b{
   
 }
 #zero{
-  width: 204px;
+  width: 7.2vw;
 }
 #sub, #mul, #add, #minus, #equal{
   background-color: rgb(255, 110, 57);
@@ -225,8 +225,24 @@ b{
 .zadania{
   display: none;
 }
-#zadania_select{
+#labelSelect{
+  color: rgb(62, 245, 160);
+  font-size: 1.2rem;
+}
+select{
   margin-top: 5vh;
+}
+#presentation_h3{
+  color: rgb(62, 245, 160);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.presentation_p{
+  margin-bottom: 15px
+}
+#wynik{
+  margin-top: 5vh;
+  color: gold;
 }
 
 
