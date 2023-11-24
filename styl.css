@@ -222,15 +222,13 @@ b{
 #sub, #mul, #add, #minus, #equal{
   background-color: rgb(255, 110, 57);
 }
-.zadania{
-  display: none;
-}
+
 #labelSelect{
   color: rgb(62, 245, 160);
   font-size: 1.2rem;
 }
 select{
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 #presentation_h3{
   color: rgb(62, 245, 160);
@@ -240,10 +238,17 @@ select{
 .presentation_p{
   margin-bottom: 15px
 }
-#wynik{
-  margin-top: 5vh;
+
+.wynik{
+  margin-top: 3vh;
   color: gold;
 }
+.zadania{
+  width: 40vw;
+  position: relative;
+  left: 31%;
+}
+
 
 
 @media only screen and (max-width: 1040px) {

@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
             list.lastChild.innerHTML = i.toString() + ": " + num.value;
         }
 
-
         }
         function odswiez(){
             location.reload();
@@ -63,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const iloscBiletowUlgowych = Number.parseInt(document.getElementById("ilosc_biletow_ulgowych").value);
             const iloscGodzin = Number.parseInt(document.getElementById("ilosc_godzin").value);
             const kartaDuzejRodziny = document.getElementById("karta_duzej_rodziny");
-            const wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             var cenaBiletuNormalnego = 10;
             var cenaBiletuUlgowego = 5;
             var kosztCalosciowy = 0;
@@ -191,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function dodawanie(){
             const a = Number.parseInt(document.getElementById("a").value);
             const b = Number.parseInt(document.getElementById("b").value); 
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
                 wynik.innerHTML = "Wynik dodawania to: " + (a+b);
             }else{
@@ -202,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function odejmowanie(){
             const a = Number.parseInt(document.getElementById("a").value);
             const b = Number.parseInt(document.getElementById("b").value);
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
                 wynik.innerHTML = "Wynik odejmowania to: " + (a-b);
             }else{
@@ -213,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function mnozenie(){
             const a = Number.parseInt(document.getElementById("a").value);
             const b = Number.parseInt(document.getElementById("b").value);
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
                 wynik.innerHTML = "Wynik mnożenia to: " + (a*b);
             }else{
@@ -224,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function dzielenie(){
             const a = Number.parseInt(document.getElementById("a").value);
             const b = Number.parseInt(document.getElementById("b").value);  
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
                 wynik.innerHTML = "Wynik dzielenia to: " + (a/b);
             }else{
@@ -235,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function reszta(){
             const a = Number.parseInt(document.getElementById("a").value);
             const b = Number.parseInt(document.getElementById("b").value);
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
                 wynik.innerHTML = "Wynik reszty z dzielenia to: " + (a%b);
             }else{
@@ -246,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function dzielenieCalkowite(){
             const a = Number.parseInt(document.getElementById("a").value);
             const b = Number.parseInt(document.getElementById("b").value);
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
                 wynik.innerHTML = "Wynik dzielenia całkowitego to: " + Math.floor(a/b);
             }else{
@@ -256,18 +255,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
             //Kalkulator3
         function suma(){
-            var pole1 = document.getElementById("pole1");
-            var pole2 = document.getElementById("pole2");
-            var wynik = document.getElementById("wynik");
+            const pole1 = document.getElementById("pole1");
+            const pole2 = document.getElementById("pole2");
+            const wynik = document.getElementsByClassName("wynik");
             var suma = (pole1.value)*1 + (pole2.value)*1;
             wynik.innerHTML = "Wynik Sumy: " + suma;
         };
 
 
         function podstawy(){
-            var pole1 = document.getElementById("pole1");
-            var pole2 = document.getElementById("pole2");
-            var wynik = document.getElementById("wynik");
+            const pole1 = document.getElementById("pole1");
+            const pole2 = document.getElementById("pole2");
+            const wynik = document.getElementsByClassName("wynik");
             var iloraz = (pole1.value)*1/(pole2.value)*1;
             var roznica =(pole1.value)*1-(pole2.value)*1;
             var iloczyn = (pole1.value)*1*(pole2.value)*1;
@@ -280,9 +279,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         function kalkulator(){
-            var pole1 = document.getElementById("pole1");
-            var pole2 = document.getElementById("pole2");
-            var wynik = document.getElementById("wynik");
+            const pole1 = document.getElementById("pole1");
+            const pole2 = document.getElementById("pole2");
+            const wynik = document.getElementsByClassName("wynik");
             var dodawanie = document.getElementById("dodawanie");
             var odejmowanie = document.getElementById("odejmowanie");
             var mnozenie = document.getElementById("mnozenie");
@@ -311,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var kosztWesela = (goscie*100);
             var kosztPoprawin = Math.round(kosztWesela*0.3);
             var calkowityKoszt = Math.round(kosztWesela+kosztPoprawin);
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(poprawiny.checked){
                 wynik.innerHTML = "Koszt wesela wyniesie " + calkowityKoszt + " zł.";
             }else{
@@ -324,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const km = Number.parseInt(document.getElementById("km").value);
             const gdansk = document.getElementById("gdansk");
             var kosztDostawy = (km*1)*2;
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if(gdansk.checked){
                 wynik.innerHTML = "Dowieziemy Twoją pizzę za darmo";
             }else{
@@ -336,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function obliczSume() {
             const numberInputs = document.getElementsByClassName("numberInput");
             const checkboxes = document.getElementsByClassName("checkbox");
-            const wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
 
             let suma = 0;
 
@@ -357,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function kosztOgloszen(){
             const liczbaOgloszen = Number.parseInt(document.getElementById("l_ogloszen").value);
             const stalyKlient = document.getElementById("staly_klient");
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             var kosztOgloszenia = 0;
             if(liczbaOgloszen <= 50){
                 kosztOgloszenia = liczbaOgloszen * 2;
@@ -390,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function kosztCegiel(){
             const liczbaCegiel = Number.parseInt(document.getElementById("ilosc_cegiel").value);
             const ceglaPremium = document.getElementById("cegla_premium");
-            const wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             const ileKm = Number.parseInt(document.getElementById("ileKm").value);
             var cenaZaKm = 0.5;
             var kosztCegly = liczbaCegiel * 2;
@@ -414,7 +413,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function bmi(){
             const wzrostBmi = document.getElementById("wzrostBmi");
             const waga = document.getElementById("waga");
-            const wynikBmi = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             var bmi = Math.round((waga.value/(wzrostBmi.value*wzrostBmi.value))*10000);
             if(bmi > 25){
                 wynikBmi.innerHTML = "Twoje BMI wynosi: " + bmi + ". ZA DUŻO!"; 
@@ -429,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       //Sprawdzanie kto jest starszy
         function starszy(){
-            const wynikStarszy = document.getElementById("wynik"); 
+            const wynikStarszy = document.getElementsByClass("wynik"); 
             const data1 = document.getElementById("data1").value;
             const data2 = document.getElementById("data2").value;
             const osoba1 =  Date.parse(data1);
@@ -448,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //Sprawdzanie czy rok jest przestepny
         function przestepny(){
             const rok = Number.parseInt(document.getElementById("przestepny").value);
-            const wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             var tabLata = Array(600);
             var byl = true;
             for (var i=0, j=0; i<tabLata.length; i++, j+=4){
@@ -473,7 +472,7 @@ document.addEventListener("DOMContentLoaded", function() {
         function sila(){
             const haslo = document.getElementById("haslo").value;
             var dlugoscHasla = haslo.length;
-            const wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if((dlugoscHasla <= 4)){
                 wynik.innerHTML =  "Hasło słabe!!!";
             }else if (dlugoscHasla <= 8) {
@@ -497,7 +496,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const a = document.getElementById("bok1").value;
             const b = document.getElementById("bok2").value;
             const c = document.getElementById("bok3").value;
-            var wynik = document.getElementById("wynik");
+            const wynik = document.getElementsByClassName("wynik");
             if (a + b > c && a + c > b && b + c > a) {
                 wynik.innerHTML = "Z podanych długości boków można utworzyć trójkąt.";
             } else {
@@ -520,7 +519,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       //Szyfrowanie znaków
         function szyfr(){
-            var wynikszyfr = document.getElementById("wynik");
+            var wynikszyfr = document.getElementsByClassName("wynik");
             var char = event.which || event.keyCode;
             //console.log(char);
     if(char >= 65 && char <= 90){

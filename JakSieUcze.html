@@ -77,6 +77,14 @@
     </div>
 
     <div class="zadania" id="divoption2">
+        <p>Formularz, aby obliczyć cenę biletów do Aquaparku przyjmuje następujące założenia:</p>
+        <ul>
+            <li>bilet normalny 10zł / godzina</li>
+            <li>bilet ulgowy 5zł / godzina</li>
+            <li>powyżej 4 godzin = bilet całodzienny: normalny 50zł, ulgowy 25zł</li>
+            <li>karta dużej rodziny rabat 10%</li>
+            <li>na każde 15 biletów ulgowych jeden bilet normalny gratis</li>
+        </ul>
         <form action="kosztBiletow">
             <label for="ilosc_biletow_normalnych">Ilość biletów normalnych:</label>
             <input type="text" id="ilosc_biletow_normalnych"><br><br>
@@ -88,7 +96,7 @@
             <input type="checkbox" name="" id="karta_duzej_rodziny"><br><br>
             <input type="button" value="Oblicz" onclick="aquapark()">
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption3">
@@ -129,7 +137,7 @@
             <button type="button" onclick="reszta()">Reszta z dzielenia</button>
             <button type="button" onclick="dzielenieCalkowite()">Dzielenie całkowite</button>
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption5">
@@ -146,7 +154,7 @@
         <button id="sumabtn" onclick="suma()">SUMA</button>
         <button id="podstawybtn" onclick="podstawy()">Podstawy</button>
         <button id="kalkulator" onclick="kalkulator()">KALKULATOR</button>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption6">
         <form action="wesele ">
@@ -155,7 +163,7 @@
             <p>Poprawiny?</p>
             <input type="checkbox" name="wesele1" id="poprawiny" onchange="wesele()">
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption7">
@@ -165,11 +173,11 @@
             <p>Jestem z Gdańska</p>
             <input type="checkbox" name="pizza" id="gdansk" onchange="dowozPizzy()">
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption8">
-        <form id="myForm">
+        <form id="sumaPol">
             <label for="number1">Liczba 1:</label>
             <input type="text" id="number1" class="numberInput" oninput="obliczSume()"/>
             <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
@@ -190,7 +198,7 @@
             <input type="text" id="number5" class="numberInput" oninput="obliczSume()"/>
             <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption9">
         <form action="kosztOgloszenia">
@@ -200,7 +208,7 @@
             <input type="checkbox" name="" id="staly_klient"><br><br>
             <input type="button" value="Koszt ogłoszenia" onclick="kosztOgloszen()">
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption10">
         <form action="kosztCegiel">
@@ -212,7 +220,7 @@
             <input type="text" id="ileKm"><br><br>
             <input type="button" value="Oblicz" onclick="kosztCegiel()">
         </form>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
     
     <div class="zadania" id="divoption11">
@@ -221,7 +229,7 @@
         <label for="waga">Podaj swoją wagę:</label><br>
         <input type="number" id="waga"><br><br>
         <input type="button" value="BMI" id="bmiBtn" onclick="bmi()">
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption12">
@@ -231,21 +239,21 @@
     <label for="data2">Osoba nr.2</label>
     <input type="text" id="data2"><br><br>
     <button id="starszyBtn" onclick="starszy()">Kto starszy?</button>
-    <div id="wynik"></div>
+    <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption13">
         <label for="przestepny">Podaj rok, aby sprawdzić czy byl przestępny:</label> <br>
     <input type="text" id="przestepny">
     <button onclick="przestepny()">Sprawdź</button><br>
-    <div id="wynik"></div>
+    <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption14">
         <p>Siła Hasła</p>
         <input type="password" name="password" id="haslo">
         <input type="button" name="password" id="silaBtn" value="Zaloguj" onclick="sila()"><br>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption15">
@@ -257,11 +265,11 @@
         <label for="bok3">Bok C:</label>
         <input type="number" id="bok3"><br><br>
         <button id="trojkatBtn" onclick="trojkat()">SPRAWDŹ</button>
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption16">
         <input type="text" id="szyfr1" onkeydown="szyfr()">
-        <div id="wynik"></div>
+        <div class="wynik"></div>
     </div>
     
 </section>
