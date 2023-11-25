@@ -39,7 +39,7 @@ a:hover{
 #main_section{
   display: grid;
   grid-template-columns: auto auto;
-  height: 78vh;
+  height: 77vh;
 }
 #ikony_umiejetnosci{
   width: 50vw;
@@ -81,6 +81,9 @@ h3{
 }
 #mapa_mysli{
   width: 50vw;
+}
+#social_media{
+  margin-top: 2vh;
 }
 
 /*Podstrona PROJEKTY*/
@@ -190,7 +193,7 @@ b{
 /*Strona JakSięUczę*/
 #script_presentation{
   width: 100vw;
-  height: 78vh;
+  height: 77vh;
 }
 #text{
   width: 14.3vw;
@@ -224,29 +227,39 @@ b{
 }
 
 #labelSelect{
-  color: rgb(62, 245, 160);
+  color: gold;
   font-size: 1.2rem;
+  text-shadow: 1px 1px black;
 }
 select{
   margin-top: 3vh;
 }
 #presentation_h3{
-  color: rgb(62, 245, 160);
+  color: gold;
   font-size: 1.5em;
   margin-bottom: 10px;
+  text-shadow: 1px 1px black;
 }
 .presentation_p{
   margin-bottom: 15px
 }
 
-.wynik{
+#wynik{
   margin-top: 3vh;
   color: gold;
+  display: block;
+  font-size: 1.1rem;
 }
 .zadania{
   width: 40vw;
   position: relative;
   left: 31%;
+}
+ul{
+  font-size: 0.8rem;
+}
+label{
+  color: gold;
 }
 
 
@@ -289,6 +302,32 @@ select{
   }
   #bodyChief_project_button, #kryptoPage_project_button{
     background-size: 4vw 8vh;
+  }
+  #script_presentation{
+    width: 85vw;
+    height: 77vh;
+    position: relative;
+    left: 10vw;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  #script_presentation::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #script_presentation::-webkit-scrollbar-thumb {
+    background-color: rgb(29, 28, 28);
+    border-radius: 50px;
+  }
+  
+  #script_presentation::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+  }
+  .list{
+    margin: 0%;
+    position: relative;
+    right: 20%;
   }
   
 }

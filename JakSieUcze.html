@@ -69,7 +69,8 @@
     border-radius: 5%;
     margin: 40%;
     margin-top: 0%;
-    margin-bottom: 0%;">Odpowiedzi:
+    margin-bottom: 0%;
+    width: 150px;"><p>Odpowiedzi:</p>
         <ul id="list">
 
         </ul>
@@ -77,7 +78,7 @@
     </div>
 
     <div class="zadania" id="divoption2">
-        <p>Formularz, aby obliczyć cenę biletów do Aquaparku przyjmuje następujące założenia:</p>
+        <h5>Formularz, aby obliczyć cenę biletów do Aquaparku przyjmuje następujące założenia:</h5>
         <ul>
             <li>bilet normalny 10zł / godzina</li>
             <li>bilet ulgowy 5zł / godzina</li>
@@ -96,7 +97,7 @@
             <input type="checkbox" name="" id="karta_duzej_rodziny"><br><br>
             <input type="button" value="Oblicz" onclick="aquapark()">
         </form>
-        <div class="wynik"></div>
+        
     </div>
 
     <div class="zadania" id="divoption3">
@@ -137,46 +138,53 @@
             <button type="button" onclick="reszta()">Reszta z dzielenia</button>
             <button type="button" onclick="dzielenieCalkowite()">Dzielenie całkowite</button>
         </form>
-        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption5">
+        <h5>Aby obliczyć wartość zaznacz działanie, które chcesz wykonać, a następnie nacisnij przycisk</h5>
         <label for="pole1">Wartość a:</label>
-        <input type="number" id="pole1">
+        <input type="number" id="pole1"><br>
         <label for="pole2">Wartość b:</label>
         <input type="text" id="pole2"><br>
 
         <input type="radio" name="kalkulator" id="dodawanie">dodawanie<br>
         <input type="radio" name="kalkulator" id="odejmowanie" >odejmowanie<br>
         <input type="radio" name="kalkulator" id="mnozenie" >mnożenie<br>
-        <input type="radio" name="kalkulator" id="dzielenie">dzielenie<br>
+        <input type="radio" name="kalkulator" id="dzielenie">dzielenie<br><br>
 
-        <button id="sumabtn" onclick="suma()">SUMA</button>
-        <button id="podstawybtn" onclick="podstawy()">Podstawy</button>
         <button id="kalkulator" onclick="kalkulator()">KALKULATOR</button>
-        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption6">
+        <h5>
+            Skrypt ten liczy koszt wesela, bazując na liczbie gości(100zl/osoba). <br> 
+            Zaznaczenie pola "POPRAWINY", skutkuje doliczeniem 30% do kosztów wesela.</h5>
         <form action="wesele ">
-            <p>Podaj liczbe gości:</p>
+            <label for="goscie">Podaj liczbe gości:</label>
             <input type="text" id="goscie" onchange="wesele()" oninput="wesele()"><br>
-            <p>Poprawiny?</p>
+            <label for="poprawiny">Poprawiny?</label>
             <input type="checkbox" name="wesele1" id="poprawiny" onchange="wesele()">
         </form>
-        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption7">
+        <h5>
+            Koszt dostawy jest liczony na podstawie długości trasy <i>(km w obie strony)</i>. <br>
+            Cena za 1km. to 1zł. <br>
+            Zaznaczenie pola "Jestem z Gdańska" gwarantuje darmową dostawę. 
+        </h5>
         <form action="dostawa">
-            <p>Podaj ilość kilometrów:</p>
-            <input type="text" id="km" onchange="dowozPizzy()" oninput="dowozPizzy()">
-            <p>Jestem z Gdańska</p>
+            <label for="km">Podaj ilość kilometrów:</label>
+            <input type="text" id="km" onchange="dowozPizzy()" oninput="dowozPizzy()"><br>
+            <label for="gdansk">Jestem z Gdańska</label>
             <input type="checkbox" name="pizza" id="gdansk" onchange="dowozPizzy()">
         </form>
-        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption8">
+        <h5>
+            Po wpisaniu wartości w pole i zaznaczenie odpowiadajacego mu boxa automatycznie zostaje policzona suma, <br>
+            tylko tych liczb, które zostały zaznaczone.
+        </h5>
         <form id="sumaPol">
             <label for="number1">Liczba 1:</label>
             <input type="text" id="number1" class="numberInput" oninput="obliczSume()"/>
@@ -198,9 +206,15 @@
             <input type="text" id="number5" class="numberInput" oninput="obliczSume()"/>
             <input type="checkbox" class="checkbox" onchange="obliczSume()"><br><br>
         </form>
-        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption9">
+        <h5>System obliczania ogłoszeń przyjmuje następujące ktyteria:</h5>
+        <ul>
+            <li>1-50 ogłoszeń, cena 2zł za ogłoszenie</li> 
+            <li>51-100 ogłoszeń, cena 1,5zł za ogłoszenie</li>
+            <li>Każde ogłoszenie powyżej 100 kosztuje 1zł.</li>
+            <li>Dla stałych klientów naliczany jest rabat 20%</li>
+        </ul>
         <form action="kosztOgloszenia">
             <label for="l_ogloszen">Liczba ogłoszeń:</label>
             <input type="text" id="l_ogloszen"><br><br>
@@ -208,52 +222,60 @@
             <input type="checkbox" name="" id="staly_klient"><br><br>
             <input type="button" value="Koszt ogłoszenia" onclick="kosztOgloszen()">
         </form>
-        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption10">
+        <h5>Przy obliczaniu kosztu zakupu cegły oraz jej transportu, program bazuje na poniższym cenniku:</h5>
+        <ul>
+            <li>Koszt jednej standardowej cegły: 2 zł</li>
+            <li>Cegła premium jest o 30% droższa</li>
+            <li>Waga jednej standardowej cegły: 1.5 kg</li>
+            <li>Waga jednej cegły premium: 1.75 kg</li>
+            <li>Koszt transportu: 50 gr za każde rozpoczęte 10 kg na 1 km</li>
+        </ul>
         <form action="kosztCegiel">
             <label for="ilosc_cegiel">Ilość cegieł:</label>
-            <input type="text" name="" id="ilosc_cegiel">
+            <input type="text" name="" id="ilosc_cegiel"><br>
             <label for="cegla_premium">Cegła premium:</label>
             <input type="checkbox" name="" id="cegla_premium"><br><br>
             <label for="ileKm">Ile km?:</label>
             <input type="text" id="ileKm"><br><br>
             <input type="button" value="Oblicz" onclick="kosztCegiel()">
         </form>
-        <div class="wynik"></div>
     </div>
     
     <div class="zadania" id="divoption11">
+        <h5>Poniższy program oblicza nasze BMI</h5>
         <label for="wzrostBmi">Podaj swój wzrost w cm, aby obliczyć BMI:</label><br>
         <input type="number" id="wzrostBmi"><br>
         <label for="waga">Podaj swoją wagę:</label><br>
         <input type="number" id="waga"><br><br>
         <input type="button" value="BMI" id="bmiBtn" onclick="bmi()">
-        <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption12">
+        <h5>Chcesz porównać dwie daty i sprawdzić kto jest starszy? <br>
+        Proszę bardzo</h5>
     <p>Podajcie wasze daty urodzin(yyyy/mm/dd):</p>
     <label for="data1">Osoba nr.1</label>
     <input type="text" id="data1"><br>
     <label for="data2">Osoba nr.2</label>
     <input type="text" id="data2"><br><br>
     <button id="starszyBtn" onclick="starszy()">Kto starszy?</button>
-    <div class="wynik"></div>
     </div>
 
     <div class="zadania" id="divoption13">
+        <h5>Nie pamiętasz czy dany rok był przetępny lub chcesz się dowiedzieć czy ten wybrany przez ciebie taki będzie? <br>
+            Sprawdź</h5>
         <label for="przestepny">Podaj rok, aby sprawdzić czy byl przestępny:</label> <br>
-    <input type="text" id="przestepny">
-    <button onclick="przestepny()">Sprawdź</button><br>
-    <div class="wynik"></div>
+    <input type="text" id="przestepny"><br>
+    <button onclick="przestepny()">Sprawdź</button>
     </div>
 
     <div class="zadania" id="divoption14">
+        <h5>Sprawdź czy twoje hasło będzie odpowiednio silne</h5>
         <p>Siła Hasła</p>
-        <input type="password" name="password" id="haslo">
-        <input type="button" name="password" id="silaBtn" value="Zaloguj" onclick="sila()"><br>
-        <div class="wynik"></div>
+        <input type="password" name="password" id="haslo"><br>
+        <input type="button" name="password" id="silaBtn" value="Zaloguj" onclick="sila()">
     </div>
 
     <div class="zadania" id="divoption15">
@@ -265,13 +287,12 @@
         <label for="bok3">Bok C:</label>
         <input type="number" id="bok3"><br><br>
         <button id="trojkatBtn" onclick="trojkat()">SPRAWDŹ</button>
-        <div class="wynik"></div>
     </div>
     <div class="zadania" id="divoption16">
+        <h5>W tym miejscu możesz zakodować dowolną wiadomość, która zostanie zaszyfrowana bazując na systemie ASCII</h5>
         <input type="text" id="szyfr1" onkeydown="szyfr()">
-        <div class="wynik"></div>
     </div>
-    
+    <div id="wynik"></div>
 </section>
     
     <div class="div" id="social_media">
