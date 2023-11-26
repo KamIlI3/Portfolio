@@ -17,7 +17,7 @@
     padding: 3vh;
     height: 5vh;
 }
-a{
+.link{
     margin-left: 7vw;
     letter-spacing: 0.1vw;
     font-size: larger;
@@ -26,7 +26,7 @@ a{
     transition: transform 0.3s ease-in-out;
     display: inline-block;
 }
-a:hover{
+.link:hover{
   color: rgb(146, 197, 4);
   text-shadow: 2px 2px 5px black;
   transform: scale(1.1);
@@ -259,8 +259,44 @@ ul{
   font-size: 0.8rem;
 }
 label{
-  color: gold;
+  color: yellow;
 }
+
+/* KONTAKT*/
+#kontakt{
+  width: 100vw;
+  height: 77vh;
+}
+#divKontakt{
+  padding-top: 7vh;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#kontakt_h1{
+  color: yellow;
+}
+#telNumber, #email{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+#userEmail{
+  width: 20vw;
+  height: 2.5vh;
+}
+#contents{
+  width: 20vw;
+  height: 25vh;
+}
+#contents, #userEmail{
+  margin: 0.2vh;
+}
+
 
 
 
