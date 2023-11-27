@@ -21,12 +21,16 @@ logoSwipe();
 function logoSwipe(){
     const future = document.getElementsByClassName("future");
     for (let i=0;i<future.length; i++){
-        future[i].style.display = "none"; //zastosowanie dla wszystkich divów o clasie "future" display="none" za pomocą pętli
+        future[i].style.opacity = 0; //zastosowanie dla wszystkich divów o clasie "future" display="none" za pomocą pętli
+        future[i].style.position = "absolute";
+    
     }
     futureIdx++; //inkrementacja futureIdx, która jest indeksem obencego diva
     if(futureIdx > future.length){
         futureIdx = 1; //jeśli wartość futureIdx bedzie wieksza od ilosci div to przyjmuje wartosc 1, czyli wraca do 2 z 3
     }
-    future[futureIdx-1].style.display = "block"; // wyświetlenie diva o indeksie futureIdx-1
-    setTimeout(logoSwipe, 2500); //ustawienie cooldown na funkcje 2,5s
+    future[futureIdx-1].style.opacity = 1; // wyświetlenie diva o indeksie futureIdx-1
+    future[futureIdx-1].style.transition = "opacity 2s ease-in-out";
+
+    setTimeout(logoSwipe, 3000); //ustawienie cooldown na funkcje 2,5s
 }
