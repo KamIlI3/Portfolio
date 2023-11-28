@@ -290,15 +290,71 @@ label{
 }
 
 #userEmail{
-  width: 20vw;
+  width: 385px;
   height: 2.5vh;
 }
 #contents{
-  width: 20vw;
+  width: 385px;
   height: 25vh;
 }
 #contents, #userEmail{
   margin: 0.2vh;
+}
+
+/* O Mnie */
+#me{
+  height: 77vh;
+  width: 80vw;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-left: 10vw;
+}
+#me h2{
+  color: yellow;
+}
+#me h1{
+  color: aquamarine;
+}
+#myPic{
+  width: 15vw; 
+  height: 30vh; 
+  float: left;
+  border-radius: 20%;
+}
+#myPic:hover{
+  box-shadow: 1px 1px 1px 1px black;
+}
+#przedstawienie p{
+  margin: 2vw;
+}
+#cechy{
+  clear: both;
+  text-align: left;
+  float: left;
+  margin-left: 15vw;
+}
+#skills{
+  text-align: left;
+  float: right;
+  margin-right: 15vw;
+}
+#me::-webkit-scrollbar {
+  width: 12px;
+}
+
+#me::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 28, 28);
+  border-radius: 50px;
+}
+
+#me::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+}
+.kwalifikacje{
+  width: 7vw;
+  height: 14vh;
+  justify-content: end;
 }
 
 
