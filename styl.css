@@ -31,15 +31,15 @@
   text-shadow: 2px 2px 5px black;
   transform: scale(1.1);
 }
-.logo{
-  width: 5.2vw;
-  height: 10.7vh;
-}
 
 #main_section{
   display: grid;
   grid-template-columns: auto auto;
   height: 77vh;
+}
+.logo{
+  width: 5.2vw;
+  height: 10.7vh;
 }
 #ikony_umiejetnosci{
   width: 50vw;
@@ -49,7 +49,7 @@
   align-items: center;
   position: relative;
 }
-h3{
+#main_section h3{
   margin: 0 3vw 0 8vw;
   position: relative;
 }
@@ -140,27 +140,27 @@ h3{
 .description{
   padding: 2vh 3vw 2vh 3vw;
 }
-.description_img{
+.description img{
   width: 40vw;
   height: 35vh;
   float: left; 
   margin: 0 20px 20px 0;
   border-radius: 10px;
 }
-.description_h1{
+.description h1{
   color: rgb(145, 255, 255);
 }
-.description_h2{
+.description h2{
   color: red;
   display: block;
   text-align: left;
   clear: both;
 }
-.description_h4{
+.description h4{
   clear: both;
   color: rgb(145, 255, 255);
 }
-.description_img + .description_p {
+.description img + .description p {
   margin-top: 15vh;
 }
 #project_description::-webkit-scrollbar {
@@ -181,7 +181,7 @@ h3{
   padding: 5vh 10vw;
   color: whitesmoke;
 }
-b{
+.description b{
   color: rgb(229, 255, 0);
   text-shadow: 2px 2px 5px black;
   position: relative;
@@ -199,6 +199,7 @@ b{
   width: 100vw;
   height: 77vh;
 }
+/*Styl dla Kalkulatora */
 #text{
   width: 14.3vw;
   height: 5vh;
@@ -229,6 +230,7 @@ b{
 #sub, #mul, #add, #minus, #equal{
   background-color: rgb(255, 110, 57);
 }
+/* ---------------*/
 
 #labelSelect{
   color: gold;
@@ -238,13 +240,13 @@ b{
 select{
   margin-top: 3vh;
 }
-#presentation_h3{
+#script_presentation h3{
   color: gold;
   font-size: 1.5em;
   margin-bottom: 10px;
   text-shadow: 1px 1px black;
 }
-.presentation_p{
+#script_presentation p{
   margin-bottom: 15px
 }
 
@@ -278,7 +280,7 @@ label{
   align-items: center;
   justify-content: center;
 }
-#kontakt_h1{
+#kontakt h1{
   color: yellow;
 }
 #telNumber, #email{
@@ -292,12 +294,11 @@ label{
 #userEmail{
   width: 385px;
   height: 2.5vh;
+  margin: 0.2vh;
 }
 #contents{
   width: 385px;
   height: 25vh;
-}
-#contents, #userEmail{
   margin: 0.2vh;
 }
 
@@ -364,14 +365,29 @@ label{
   body {
     font-size: 14px;
   }
-
+/* PORTFOLIO */
   #ikony_umiejetnosci {
     width: 80vw; 
-    left: 14vw;
+    left: 10vw;
   }
 
   #main_section {
     grid-template-columns: 1fr; 
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  #main_section::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #main_section::-webkit-scrollbar-thumb {
+    background-color: rgb(29, 28, 28);
+    border-radius: 50px;
+  }
+  
+  #main_section::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
   }
   #present{
     position: relative;
@@ -379,11 +395,14 @@ label{
   #mapa_mysli{
     position: relative;
     left: 29vw;
+    top: 4vh;
   }
   .future{
     position: relative;
     top: 20%;
+    left: 1vw;
   }
+  /* Projekty */
   h3{
     size: 10px;
     position: relative;
@@ -423,7 +442,7 @@ label{
   .list{
     margin: 0%;
     position: relative;
-    right: 20%;
+    right: 28%;
   }
   
 }
