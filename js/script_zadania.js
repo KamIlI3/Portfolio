@@ -1,23 +1,23 @@
 function hideAllDivs() {
-var allDivs = document.getElementsByClassName("zadania");
-var wynik = document.getElementById("wynik");
-for (var i = 0; i < allDivs.length; i++) {
-    allDivs[i].style.display = "none";
-    wynik.innerHTML = "";
-}
+    var allDivs = document.getElementsByClassName("zadania");
+    var wynik = document.getElementById("wynik");
+    for (var i = 0; i < allDivs.length; i++) {
+        allDivs[i].style.display = "none";
+        wynik.innerHTML = "";
+    }
 }
 
 //Zmiana diva w zależości od wybranego pola select
 function showSelectedDiv() {
-var selectedValue = document.getElementById("zadania_select").value;
-var selectedDiv = document.getElementById("div" + selectedValue);
-hideAllDivs();
+    var selectedValue = document.getElementById("zadania_select").value;
+    var selectedDiv = document.getElementById("div" + selectedValue);
+    hideAllDivs();
     selectedDiv.style.display = "block";
 }
 
 
 //Domyślny div po załadowaniu strony
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("zadania_select").value = "option1";
 
     showSelectedDiv();
@@ -31,36 +31,36 @@ var answer = document.getElementById("answer");
 var button = document.getElementById("button");
 var list = document.getElementById("list");
 var i = 0;
-var los = Math.floor(Math.random()*10)+1;
+var los = Math.floor(Math.random() * 10) + 1;
 button.addEventListener("click", gra);
-function gra(){
-    if (num.value >=1 && num.value <=10) {
+function gra() {
+    if (num.value >= 1 && num.value <= 10) {
         i++
 
-    if (los == num.value) {
-        answer.innerHTML = "Brawo! Zgadłeś za " + i + " razem. Wylosowana liczba to: " + num.value;
-        button.innerHTML = "Odśwież";
-        button.removeEventListener("click", gra);
-        button.addEventListener("click", odswiez);
+        if (los == num.value) {
+            answer.innerHTML = "Brawo! Zgadłeś za " + i + " razem. Wylosowana liczba to: " + num.value;
+            button.innerHTML = "Odśwież";
+            button.removeEventListener("click", gra);
+            button.addEventListener("click", odswiez);
+        }
+        else if (los > num.value) {
+            answer.innerHTML = "wylosowana liczba jest wieksza";
+        }
+        else {
+            answer.innerHTML = "wylosowana liczba jest mniejsza";
+        }
+        var li = document.createElement("li");
+        list.appendChild(li);
+        list.lastChild.innerHTML = i.toString() + ": " + num.value;
     }
-    else if (los > num.value) {
-        answer.innerHTML = "wylosowana liczba jest wieksza";
-    }
-    else{
-        answer.innerHTML = "wylosowana liczba jest mniejsza";
-    }
-    var li = document.createElement("li");
-    list.appendChild(li);
-    list.lastChild.innerHTML = i.toString() + ": " + num.value;
-}
 
 }
-function odswiez(){
+function odswiez() {
     location.reload();
 }
 
 //Koszt biletów
-function aquapark(){
+function aquapark() {
     const iloscBiletowNormalnych = Number.parseInt(document.getElementById("ilosc_biletow_normalnych").value);
     const iloscBiletowUlgowych = Number.parseInt(document.getElementById("ilosc_biletow_ulgowych").value);
     const iloscGodzin = Number.parseInt(document.getElementById("ilosc_godzin").value);
@@ -69,38 +69,38 @@ function aquapark(){
     var cenaBiletuNormalnego = 10;
     var cenaBiletuUlgowego = 5;
     var kosztCalosciowy = 0;
-    if(iloscGodzin > 4){
+    if (iloscGodzin > 4) {
         cenaBiletuNormalnego = 50;
         cenaBiletuUlgowego = 25;
-        kosztCalosciowy = (iloscBiletowNormalnych*cenaBiletuNormalnego)+(iloscBiletowUlgowych*cenaBiletuUlgowego);
-        if(kartaDuzejRodziny.checked){
-            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy*0.1);
-            for(let i=14; i<iloscBiletowUlgowych; i+=15){
+        kosztCalosciowy = (iloscBiletowNormalnych * cenaBiletuNormalnego) + (iloscBiletowUlgowych * cenaBiletuUlgowego);
+        if (kartaDuzejRodziny.checked) {
+            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy * 0.1);
+            for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku po uwzględnieniu rabatu wyniesie: " + kosztCalosciowy + " zł.";
-        }else{
-            for(let i=14; i<iloscBiletowUlgowych; i+=15){
+        } else {
+            for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku bez rabatu wyniesie: " + kosztCalosciowy + " zł.";
         }
-    }else{
-        kosztCalosciowy = (iloscBiletowNormalnych*iloscGodzin*cenaBiletuNormalnego)+(iloscBiletowUlgowych*cenaBiletuUlgowego*iloscGodzin);
-        if(kartaDuzejRodziny.checked){
-            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy*0.1);
-            for(let i=14; i<iloscBiletowUlgowych; i+=15){
+    } else {
+        kosztCalosciowy = (iloscBiletowNormalnych * iloscGodzin * cenaBiletuNormalnego) + (iloscBiletowUlgowych * cenaBiletuUlgowego * iloscGodzin);
+        if (kartaDuzejRodziny.checked) {
+            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy * 0.1);
+            for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku po uwzględnieniu rabatu wyniesie: " + kosztCalosciowy + " zł.";
-        }else{
-            for(let i=14; i<iloscBiletowUlgowych; i+=15){
+        } else {
+            for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku bez rabatu wyniesie: " + kosztCalosciowy + " zł.";
         }
     }
-}  
+}
 
 //Kalkulator
 var text = document.getElementById("text");
@@ -111,154 +111,154 @@ var temp3 = "";
 var result = 0;
 
 
-function reset(){
+function reset() {
     text.value = "";
 }
-function seven(){
+function seven() {
     text.value += "7";
 }
-function eight(){
+function eight() {
     text.value += "8";
 }
-function nine(){
+function nine() {
     text.value += "9";
 }
-function four(){
+function four() {
     text.value += "4";
 }
-function five(){
+function five() {
     text.value += "5";
 }
-function six(){
+function six() {
     text.value += "6";
 }
-function one(){
+function one() {
     text.value += "1";
 }
-function two(){
+function two() {
     text.value += "2";
 }
-function three(){
+function three() {
     text.value += "3";
 }
-function zero(){
+function zero() {
     text.value += "0";
 }
-function dot(){
+function dot() {
     text.value += ".";
 }
 
-function add(){
-    temp1 = text.value*1;
+function add() {
+    temp1 = text.value * 1;
     temp3 = "+";
     text.value = "";
 }
-function equal(){
-    temp2 = text.value*1;
-    if(temp3 == "+"){
-    result = temp1 + temp2;
-    text.value = result; 
+function equal() {
+    temp2 = text.value * 1;
+    if (temp3 == "+") {
+        result = temp1 + temp2;
+        text.value = result;
     }
-    else if(temp3 == "-"){
-    result = temp1 - temp2;
-    text.value = result;
+    else if (temp3 == "-") {
+        result = temp1 - temp2;
+        text.value = result;
     }
-    else if(temp3 == "*"){
-    result = temp1 * temp2;
-    text.value = result;
+    else if (temp3 == "*") {
+        result = temp1 * temp2;
+        text.value = result;
     }
-    else{
-    result = temp1 / temp2;
-    text.value = result;
+    else {
+        result = temp1 / temp2;
+        text.value = result;
     }
-    
+
 }
-function minus(){
-    temp1 = text.value*1;
+function minus() {
+    temp1 = text.value * 1;
     temp3 = "-";
     text.value = "";
 }
-function mul(){
-    temp1 = text.value*1;
+function mul() {
+    temp1 = text.value * 1;
     temp3 = "*";
     text.value = "";
 }
-function sub(){
-    temp1 = text.value*1;
+function sub() {
+    temp1 = text.value * 1;
     temp3 = "/";
     text.value = "";
 }
 
 //Funkcje dla Kalkulator2
-function dodawanie(){
-    const a = Number.parseInt(document.getElementById("a").value);
-    const b = Number.parseInt(document.getElementById("b").value); 
-    const wynik = document.getElementById("wynik");
-    if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
-        wynik.innerHTML = "Wynik dodawania to: " + (a+b);
-    }else{
-        wynik.innerHTML = "Popraw wartości w polu a lub b";
-    }
-}
-
-function odejmowanie(){
+function dodawanie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
-        wynik.innerHTML = "Wynik odejmowania to: " + (a-b);
-    }else{
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
+        wynik.innerHTML = "Wynik dodawania to: " + (a + b);
+    } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
 }
 
-function mnozenie(){
+function odejmowanie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
-        wynik.innerHTML = "Wynik mnożenia to: " + (a*b);
-    }else{
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
+        wynik.innerHTML = "Wynik odejmowania to: " + (a - b);
+    } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
 }
 
-function dzielenie(){
-    const a = Number.parseInt(document.getElementById("a").value);
-    const b = Number.parseInt(document.getElementById("b").value);  
-    const wynik = document.getElementById("wynik");
-    if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
-        wynik.innerHTML = "Wynik dzielenia to: " + (a/b);
-    }else{
-        wynik.innerHTML = "Popraw wartości w polu a lub b";
-    }
-}
-
-function reszta(){
+function mnozenie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
-        wynik.innerHTML = "Wynik reszty z dzielenia to: " + (a%b);
-    }else{
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
+        wynik.innerHTML = "Wynik mnożenia to: " + (a * b);
+    } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
 }
 
-function dzielenieCalkowite(){
+function dzielenie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if(((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim()))||((!isNaN(a))&&(!isNaN(b)))){
-        wynik.innerHTML = "Wynik dzielenia całkowitego to: " + Math.floor(a/b);
-    }else{
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
+        wynik.innerHTML = "Wynik dzielenia to: " + (a / b);
+    } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
 }
 
-    //Kalkulator3
+function reszta() {
+    const a = Number.parseInt(document.getElementById("a").value);
+    const b = Number.parseInt(document.getElementById("b").value);
+    const wynik = document.getElementById("wynik");
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
+        wynik.innerHTML = "Wynik reszty z dzielenia to: " + (a % b);
+    } else {
+        wynik.innerHTML = "Popraw wartości w polu a lub b";
+    }
+}
 
-function kalkulator(){
+function dzielenieCalkowite() {
+    const a = Number.parseInt(document.getElementById("a").value);
+    const b = Number.parseInt(document.getElementById("b").value);
+    const wynik = document.getElementById("wynik");
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
+        wynik.innerHTML = "Wynik dzielenia całkowitego to: " + Math.floor(a / b);
+    } else {
+        wynik.innerHTML = "Popraw wartości w polu a lub b";
+    }
+}
+
+//Kalkulator3
+
+function kalkulator() {
     const pole1 = document.getElementById("pole1");
     const pole2 = document.getElementById("pole2");
     const wynik = document.getElementById("wynik");
@@ -266,48 +266,51 @@ function kalkulator(){
     var odejmowanie = document.getElementById("odejmowanie");
     var mnozenie = document.getElementById("mnozenie");
     var dzielenie = document.getElementById("dzielenie");
-    var suma = (pole1.value)*1 + (pole2.value)*1;
-    var iloraz = (pole1.value)*1/(pole2.value)*1;
-    var roznica =(pole1.value)*1-(pole2.value)*1;
-    var iloczyn = (pole1.value)*1*(pole2.value)*1;
-    if(dodawanie.checked){
-        wynik.innerHTML = "Wynik dodawania: " + suma;}  
-    else if(odejmowanie.checked){
-    wynik.innerHTML = "Wynik odejmowania: " + roznica;}
-    else if(mnozenie.checked){
-    wynik.innerHTML = "Wynik mnożenia: " + iloczyn;}
-    else if(dzielenie.checked){
-    wynik.innerHTML = "Wynik dzielenia: " + iloraz;
-    }else{
-    wynik.innerHTML = "MUSISZ COS ZAZNACZYĆ!";
+    var suma = (pole1.value) * 1 + (pole2.value) * 1;
+    var iloraz = (pole1.value) * 1 / (pole2.value) * 1;
+    var roznica = (pole1.value) * 1 - (pole2.value) * 1;
+    var iloczyn = (pole1.value) * 1 * (pole2.value) * 1;
+    if (dodawanie.checked) {
+        wynik.innerHTML = "Wynik dodawania: " + suma;
+    }
+    else if (odejmowanie.checked) {
+        wynik.innerHTML = "Wynik odejmowania: " + roznica;
+    }
+    else if (mnozenie.checked) {
+        wynik.innerHTML = "Wynik mnożenia: " + iloczyn;
+    }
+    else if (dzielenie.checked) {
+        wynik.innerHTML = "Wynik dzielenia: " + iloraz;
+    } else {
+        wynik.innerHTML = "MUSISZ COS ZAZNACZYĆ!";
     }
 };
 
 //Obliczanie kosztów wesela
-function wesele(){
+function wesele() {
     const goscie = Number.parseInt(document.getElementById("goscie").value);
     const poprawiny = document.getElementById("poprawiny");
-    var kosztWesela = (goscie*100);
-    var kosztPoprawin = Math.round(kosztWesela*0.3);
-    var calkowityKoszt = Math.round(kosztWesela+kosztPoprawin);
+    var kosztWesela = (goscie * 100);
+    var kosztPoprawin = Math.round(kosztWesela * 0.3);
+    var calkowityKoszt = Math.round(kosztWesela + kosztPoprawin);
     const wynik = document.getElementById("wynik");
-    if(poprawiny.checked){
+    if (poprawiny.checked) {
         wynik.innerHTML = "Koszt wesela wyniesie " + calkowityKoszt + " zł.";
-    }else{
-    wynik.innerHTML = "Koszt wesela wyniesie " + kosztWesela + " zł.";
+    } else {
+        wynik.innerHTML = "Koszt wesela wyniesie " + kosztWesela + " zł.";
     }
 };
 
 //Obliczenie dostawy Pizzy
-function dowozPizzy(){
+function dowozPizzy() {
     const km = Number.parseInt(document.getElementById("km").value);
     const gdansk = document.getElementById("gdansk");
-    var kosztDostawy = (km*1)*2;
+    var kosztDostawy = (km * 1) * 2;
     const wynik = document.getElementById("wynik");
-    if(gdansk.checked){
+    if (gdansk.checked) {
         wynik.innerHTML = "Dowieziemy Twoją pizzę za darmo";
-    }else{
-    wynik.innerHTML = "Dowóz będzie Cię kosztował " + kosztDostawy + " zł.";
+    } else {
+        wynik.innerHTML = "Dowóz będzie Cię kosztował " + kosztDostawy + " zł.";
     }
 };
 
@@ -333,40 +336,40 @@ function obliczSume() {
 }
 
 //Koszt ogłoszeń
-function kosztOgloszen(){
+function kosztOgloszen() {
     const liczbaOgloszen = Number.parseInt(document.getElementById("l_ogloszen").value);
     const stalyKlient = document.getElementById("staly_klient");
     const wynik = document.getElementById("wynik");
     var kosztOgloszenia = 0;
-    if(liczbaOgloszen <= 50){
+    if (liczbaOgloszen <= 50) {
         kosztOgloszenia = liczbaOgloszen * 2;
-        if(stalyKlient.checked){
-            kosztOgloszenia = Math.round(kosztOgloszenia-(kosztOgloszenia*0.2));
+        if (stalyKlient.checked) {
+            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2));
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
-        }else{
+        } else {
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
         }
-    }else if((liczbaOgloszen > 50)&&(liczbaOgloszen <=100)){
+    } else if ((liczbaOgloszen > 50) && (liczbaOgloszen <= 100)) {
         kosztOgloszenia = liczbaOgloszen * 1.5;
-        if(stalyKlient.checked){
-            kosztOgloszenia = Math.round(kosztOgloszenia-(kosztOgloszenia*0.2));
+        if (stalyKlient.checked) {
+            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2));
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
-        }else{
+        } else {
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
         }
-    }else if(liczbaOgloszen > 100){
+    } else if (liczbaOgloszen > 100) {
         kosztOgloszenia = liczbaOgloszen * 1;
-        if(stalyKlient.checked){
-            kosztOgloszenia = Math.round(kosztOgloszenia-(kosztOgloszenia*0.2));
+        if (stalyKlient.checked) {
+            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2));
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
-        }else{
+        } else {
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
         }
     }
 }
 
 //Koszt Cegieł
-function kosztCegiel(){
+function kosztCegiel() {
     const liczbaCegiel = Number.parseInt(document.getElementById("ilosc_cegiel").value);
     const ceglaPremium = document.getElementById("cegla_premium");
     const wynik = document.getElementById("wynik");
@@ -374,44 +377,44 @@ function kosztCegiel(){
     var cenaZaKm = 0.5;
     var kosztCegly = liczbaCegiel * 2;
     var wagaCegly = liczbaCegiel * 1.5;
-    var kosztCeglyPremium = kosztCegly + (kosztCegly*0.3);
+    var kosztCeglyPremium = kosztCegly + (kosztCegly * 0.3);
     var wagaCeglyPremium = liczbaCegiel * 1.75;
-    for(var i=0, j=0.5; i<wagaCegly; i+=10, j+=0.5){
+    for (var i = 0, j = 0.5; i < wagaCegly; i += 10, j += 0.5) {
         cenaZaKm = j;
     }
     var kosztDostawy = cenaZaKm * ileKm;
-    if(ceglaPremium.checked){
+    if (ceglaPremium.checked) {
         wynik.innerHTML = `Zakupiona ilość cegieł: ${liczbaCegiel}, cegła premium, koszt zakupu cegieł: ${kosztCeglyPremium} zł, waga cegieł: ${wagaCeglyPremium},
         koszt dostawy: ${kosztDostawy} zł`;
-    }else{
+    } else {
         wynik.innerHTML = `Zakupiona ilość cegieł: ${liczbaCegiel}, cegła standardowa, koszt zakupu cegieł: ${kosztCegly} zł, waga cegieł: ${wagaCegly},
         koszt dostawy: ${kosztDostawy} zł.`;
-    } 
+    }
 }
 
 //Obliczanie BMI
-function bmi(){
+function bmi() {
     const wzrostBmi = document.getElementById("wzrostBmi");
     const waga = document.getElementById("waga");
     const wynikBmi = document.getElementById("wynik");
-    var bmi = Math.round((waga.value/(wzrostBmi.value*wzrostBmi.value))*10000);
-    if(bmi > 25){
-        wynikBmi.innerHTML = "Twoje BMI wynosi: " + bmi + ". ZA DUŻO!"; 
+    var bmi = Math.round((waga.value / (wzrostBmi.value * wzrostBmi.value)) * 10000);
+    if (bmi > 25) {
+        wynikBmi.innerHTML = "Twoje BMI wynosi: " + bmi + ". ZA DUŻO!";
     }
-    else if(bmi <18.5){
+    else if (bmi < 18.5) {
         wynikBmi.innerHTML = "Twoje BMI wynosi: " + bmi + ". ZA MAŁO!";
     }
-    else{
+    else {
         wynikBmi.innerHTML = "Twoje BMI wynosi: " + bmi + ". OK!";
     }
 }
 
 //Sprawdzanie kto jest starszy
-function starszy(){
-    const wynikStarszy = document.getElementById("wynik"); 
+function starszy() {
+    const wynikStarszy = document.getElementById("wynik");
     const data1 = document.getElementById("data1").value;
     const data2 = document.getElementById("data2").value;
-    const osoba1 =  Date.parse(data1);
+    const osoba1 = Date.parse(data1);
     const osoba2 = Date.parse(data2);
     if (isNaN(osoba1) || isNaN(osoba2)) {
         wynikStarszy.innerHTML = "Proszę wprowadzić poprawne daty w formacie RRRR-MM-DD.";
@@ -425,54 +428,54 @@ function starszy(){
 }
 
 //Sprawdzanie czy rok jest przestepny
-function przestepny(){
+function przestepny() {
     const rok = Number.parseInt(document.getElementById("przestepny").value);
     const wynik = document.getElementById("wynik");
     var tabLata = Array(600);
     var byl = true;
-    for (var i=0, j=0; i<tabLata.length; i++, j+=4){
-        tabLata[i] = j; 
+    for (var i = 0, j = 0; i < tabLata.length; i++, j += 4) {
+        tabLata[i] = j;
     }
-    for(var i in tabLata){
-        if(tabLata[i] == rok){
+    for (var i in tabLata) {
+        if (tabLata[i] == rok) {
             byl = true;;
             break;
-        }else{
-            byl = false;      
+        } else {
+            byl = false;
         }
     }
-    if(byl == true){
+    if (byl == true) {
         wynik.innerHTML = "Ten rok jest przestępny.";
-    }else{
+    } else {
         wynik.innerHTML = "Ten rok nie jest przestępny.";
     }
 }
 
 //Sprawdzanie siły hasła
-function sila(){
+function sila() {
     const haslo = document.getElementById("haslo").value;
     var dlugoscHasla = haslo.length;
     const wynik = document.getElementById("wynik");
-    if((dlugoscHasla <= 4)){
-        wynik.innerHTML =  "Hasło słabe!!!";
-    }else if (dlugoscHasla <= 8) {
+    if ((dlugoscHasla <= 4)) {
+        wynik.innerHTML = "Hasło słabe!!!";
+    } else if (dlugoscHasla <= 8) {
         if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) {
-            wynik.innerHTML =  "Hasło słabe - brak wymaganego elementu";
+            wynik.innerHTML = "Hasło słabe - brak wymaganego elementu";
         } else {
-            wwynik.innerHTML =  "Hasło średnie";
+            wwynik.innerHTML = "Hasło średnie";
         }
     } else {
         if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) {
             wynikSila.innerHTML = "Hasło słabe - brak wymaganego elementu";
         } else {
-            wynik.innerHTML =  "Hasło mocne";
+            wynik.innerHTML = "Hasło mocne";
         }
     }
 
 }
 
 //Sprawdzanie czy z podanych przez uzytkownika boków można utworzyć trójkąt
-function trojkat(){
+function trojkat() {
     const a = document.getElementById("bok1").value;
     const b = document.getElementById("bok2").value;
     const c = document.getElementById("bok3").value;
@@ -481,15 +484,15 @@ function trojkat(){
         wynik.innerHTML = "Z podanych długości boków można utworzyć trójkąt.";
     } else {
         wynik.innerHTML = "Z podanych długości boków nie można utworzyć trójkąta.";
-        
+
         if (a + b <= c) {
             wynik.innerHTML = "Warunek a + b > c nie jest spełniony.";
         }
-        
+
         if (a + c <= b) {
             wynik.innerHTML = "Warunek a + c > b nie jest spełniony.";
         }
-        
+
         if (b + c <= a) {
             wynik.innerHTML = "Warunek b + c > a nie jest spełniony.";
         }
@@ -498,16 +501,16 @@ function trojkat(){
 }
 
 //Szyfrowanie znaków
-function szyfr(){
+function szyfr() {
     const wynikszyfr = document.getElementById("wynik");
     var char = event.which || event.keyCode;
     //console.log(char);
-if(char >= 65 && char <= 90){
-char +=2;
-wynikszyfr.innerHTML += String.fromCharCode(char);
-}else{
-wynikszyfr.innerHTML = "To nie alfabet!";
-}
+    if (char >= 65 && char <= 90) {
+        char += 2;
+        wynikszyfr.innerHTML += String.fromCharCode(char);
+    } else {
+        wynikszyfr.innerHTML = "To nie alfabet!";
+    }
 
 }
 
