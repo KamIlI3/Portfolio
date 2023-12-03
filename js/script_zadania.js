@@ -1,3 +1,4 @@
+//Funkcja ukrycia na wstępie wszystkich divów
 function hideAllDivs() {
     var allDivs = document.getElementsByClassName("zadania");
     var wynik = document.getElementById("wynik");
@@ -31,8 +32,10 @@ var answer = document.getElementById("answer");
 var button = document.getElementById("button");
 var list = document.getElementById("list");
 var i = 0;
-var los = Math.floor(Math.random() * 10) + 1;
+var los = Math.floor(Math.random() * 10) + 1; //Wylosowanie liczby 1-10
 button.addEventListener("click", gra);
+
+// Gra
 function gra() {
     if (num.value >= 1 && num.value <= 10) {
         i++
@@ -40,21 +43,22 @@ function gra() {
         if (los == num.value) {
             answer.innerHTML = "Brawo! Zgadłeś za " + i + " razem. Wylosowana liczba to: " + num.value;
             button.innerHTML = "Odśwież";
-            button.removeEventListener("click", gra);
-            button.addEventListener("click", odswiez);
+            button.removeEventListener("click", gra); //usunięcie eventu z przycisku
+            button.addEventListener("click", odswiez); //dodanie nowego eventu do przycisku po skonczeniu gry
         }
-        else if (los > num.value) {
+        else if (los > num.value) { //kod wykonywany w przypadku, kiedy wartosc podana przez użytkownika jest mniejsza od losu
             answer.innerHTML = "wylosowana liczba jest wieksza";
         }
-        else {
+        else {//kod wykonywany w przypadku, kiedy wartosc podana przez użytkownika jest większa od losu
             answer.innerHTML = "wylosowana liczba jest mniejsza";
         }
-        var li = document.createElement("li");
-        list.appendChild(li);
-        list.lastChild.innerHTML = i.toString() + ": " + num.value;
+        var li = document.createElement("li"); //tworzenie dynamiczne listy
+        list.appendChild(li); //dołączenie elementu
+        list.lastChild.innerHTML = i.toString() + ": " + num.value; //wypisanie strzałów użytkownika
     }
 
 }
+//Funkcja odswieżenia strony wywoływana przez przycisk po skończeniu gry
 function odswiez() {
     location.reload();
 }
@@ -69,31 +73,31 @@ function aquapark() {
     var cenaBiletuNormalnego = 10;
     var cenaBiletuUlgowego = 5;
     var kosztCalosciowy = 0;
-    if (iloscGodzin > 4) {
+    if (iloscGodzin > 4) { //blok wykonywany do oblicznia ceny w przypadku kiedy liczb godzin jest wieksza od 4, co sprawia ze każdy bilet będzie w cenie całodniowego
         cenaBiletuNormalnego = 50;
         cenaBiletuUlgowego = 25;
         kosztCalosciowy = (iloscBiletowNormalnych * cenaBiletuNormalnego) + (iloscBiletowUlgowych * cenaBiletuUlgowego);
         if (kartaDuzejRodziny.checked) {
-            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy * 0.1);
-            for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
+            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy * 0.1); //oblicznie rabatu w związku z karta dużej rodziny
+            for (let i = 14; i < iloscBiletowUlgowych; i += 15) { //policzenie co 15 bileu jako darmowy
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku po uwzględnieniu rabatu wyniesie: " + kosztCalosciowy + " zł.";
-        } else {
+        } else { //oblicznie ceny bez rabatu
             for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku bez rabatu wyniesie: " + kosztCalosciowy + " zł.";
         }
-    } else {
+    } else { //blok wykonywany do oblicznia ceny w przypadku kiedy liczb godzin jest mniejsza od 4, co sprawia ze płaci za ilosc godzin w cenie 10/5/h
         kosztCalosciowy = (iloscBiletowNormalnych * iloscGodzin * cenaBiletuNormalnego) + (iloscBiletowUlgowych * cenaBiletuUlgowego * iloscGodzin);
         if (kartaDuzejRodziny.checked) {
-            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy * 0.1);
-            for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
+            kosztCalosciowy = kosztCalosciowy - (kosztCalosciowy * 0.1); //oblicznie rabatu w związku z karta dużej rodziny
+            for (let i = 14; i < iloscBiletowUlgowych; i += 15) { //policzenie co 15 bileu jako darmowy
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
             wynik.innerHTML = "Koszt pobytu w Aquaparku po uwzględnieniu rabatu wyniesie: " + kosztCalosciowy + " zł.";
-        } else {
+        } else { //oblicznie ceny bez rabatu
             for (let i = 14; i < iloscBiletowUlgowych; i += 15) {
                 kosztCalosciowy = kosztCalosciowy - cenaBiletuNormalnego;
             }
@@ -105,9 +109,9 @@ function aquapark() {
 //Kalkulator
 var text = document.getElementById("text");
 var clear = document.getElementById("cl");
-var temp1 = 0;
-var temp2 = 0;
-var temp3 = "";
+var temp1 = 0; //wartosc wprowadzona jako pierwsza
+var temp2 = 0; //wartosc wprowadzona jako druga
+var temp3 = ""; //zmienna pozwalająca wykonać odpowiednie działanie
 var result = 0;
 
 
@@ -194,8 +198,8 @@ function dodawanie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
-        wynik.innerHTML = "Wynik dodawania to: " + (a + b);
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) { //Warunek sprawdzający czy pole nie jest puste orazz czy jest liczbą
+        wynik.innerHTML = "Wynik dodawania to: " + (a + b); //działanie odpowiadające konkretnemu przyciskowi
     } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
@@ -205,8 +209,8 @@ function odejmowanie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
-        wynik.innerHTML = "Wynik odejmowania to: " + (a - b);
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) { //Warunek sprawdzający czy pole nie jest puste orazz czy jest liczbą
+        wynik.innerHTML = "Wynik odejmowania to: " + (a - b); //działanie odpowiadające konkretnemu przyciskowi
     } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
@@ -216,8 +220,8 @@ function mnozenie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
-        wynik.innerHTML = "Wynik mnożenia to: " + (a * b);
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) { //Warunek sprawdzający czy pole nie jest puste orazz czy jest liczbą
+        wynik.innerHTML = "Wynik mnożenia to: " + (a * b); //działanie odpowiadające konkretnemu przyciskowi
     } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
@@ -227,8 +231,8 @@ function dzielenie() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
-        wynik.innerHTML = "Wynik dzielenia to: " + (a / b);
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) { //Warunek sprawdzający czy pole nie jest puste orazz czy jest liczbą
+        wynik.innerHTML = "Wynik dzielenia to: " + (a / b); //działanie odpowiadające konkretnemu przyciskowi
     } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
@@ -238,8 +242,8 @@ function reszta() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
-        wynik.innerHTML = "Wynik reszty z dzielenia to: " + (a % b);
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) { //Warunek sprawdzający czy pole nie jest puste orazz czy jest liczbą
+        wynik.innerHTML = "Wynik reszty z dzielenia to: " + (a % b); //działanie odpowiadające konkretnemu przyciskowi
     } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
@@ -249,8 +253,8 @@ function dzielenieCalkowite() {
     const a = Number.parseInt(document.getElementById("a").value);
     const b = Number.parseInt(document.getElementById("b").value);
     const wynik = document.getElementById("wynik");
-    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) {
-        wynik.innerHTML = "Wynik dzielenia całkowitego to: " + Math.floor(a / b);
+    if (((document.getElementById("a").value.trim()) && (document.getElementById("b").value.trim())) || ((!isNaN(a)) && (!isNaN(b)))) { //Warunek sprawdzający czy pole nie jest puste orazz czy jest liczbą
+        wynik.innerHTML = "Wynik dzielenia całkowitego to: " + Math.floor(a / b); //działanie odpowiadające konkretnemu przyciskowi
     } else {
         wynik.innerHTML = "Popraw wartości w polu a lub b";
     }
@@ -270,18 +274,18 @@ function kalkulator() {
     var iloraz = (pole1.value) * 1 / (pole2.value) * 1;
     var roznica = (pole1.value) * 1 - (pole2.value) * 1;
     var iloczyn = (pole1.value) * 1 * (pole2.value) * 1;
-    if (dodawanie.checked) {
+    if (dodawanie.checked) { //Wyświetlenie wyniku jesli pole jest zaznaczone
         wynik.innerHTML = "Wynik dodawania: " + suma;
     }
-    else if (odejmowanie.checked) {
+    else if (odejmowanie.checked) { //Wyświetlenie wyniku jesli pole jest zaznaczone
         wynik.innerHTML = "Wynik odejmowania: " + roznica;
     }
-    else if (mnozenie.checked) {
+    else if (mnozenie.checked) { //Wyświetlenie wyniku jesli pole jest zaznaczone
         wynik.innerHTML = "Wynik mnożenia: " + iloczyn;
     }
-    else if (dzielenie.checked) {
+    else if (dzielenie.checked) { //Wyświetlenie wyniku jesli pole jest zaznaczone
         wynik.innerHTML = "Wynik dzielenia: " + iloraz;
-    } else {
+    } else { //Komunikat zalecający zaznaczenie pola 
         wynik.innerHTML = "MUSISZ COS ZAZNACZYĆ!";
     }
 };
@@ -290,9 +294,9 @@ function kalkulator() {
 function wesele() {
     const goscie = Number.parseInt(document.getElementById("goscie").value);
     const poprawiny = document.getElementById("poprawiny");
-    var kosztWesela = (goscie * 100);
-    var kosztPoprawin = Math.round(kosztWesela * 0.3);
-    var calkowityKoszt = Math.round(kosztWesela + kosztPoprawin);
+    var kosztWesela = (goscie * 100); //koszt wesela
+    var kosztPoprawin = Math.round(kosztWesela * 0.3); //koszt poprawin 
+    var calkowityKoszt = Math.round(kosztWesela + kosztPoprawin); //koszt wesela z poprawinami
     const wynik = document.getElementById("wynik");
     if (poprawiny.checked) {
         wynik.innerHTML = "Koszt wesela wyniesie " + calkowityKoszt + " zł.";
@@ -322,12 +326,10 @@ function obliczSume() {
 
     let suma = 0;
 
-    // Iteracja przez pola tekstowe
-    for (let i = 0; i < numberInputs.length; i++) {
+    for (let i = 0; i < numberInputs.length; i++) { // Iteracja przez pola tekstowe
         const inputValue = parseInt(numberInputs[i].value);
 
-        // Sprawdzenie, czy checkbox jest zaznaczony
-        if (checkboxes[i].checked && !isNaN(inputValue)) {
+        if (checkboxes[i].checked && !isNaN(inputValue)) {  // Sprawdzenie, czy checkbox jest zaznaczony
             suma += inputValue;
         }
     }
@@ -344,12 +346,12 @@ function kosztOgloszen() {
     if (liczbaOgloszen <= 50) {
         kosztOgloszenia = liczbaOgloszen * 2;
         if (stalyKlient.checked) {
-            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2));
+            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2)); //naliczenie rabatu
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
         } else {
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
         }
-    } else if ((liczbaOgloszen > 50) && (liczbaOgloszen <= 100)) {
+    } else if ((liczbaOgloszen > 50) && (liczbaOgloszen <= 100)) { 
         kosztOgloszenia = liczbaOgloszen * 1.5;
         if (stalyKlient.checked) {
             kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2));
@@ -360,7 +362,7 @@ function kosztOgloszen() {
     } else if (liczbaOgloszen > 100) {
         kosztOgloszenia = liczbaOgloszen * 1;
         if (stalyKlient.checked) {
-            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2));
+            kosztOgloszenia = Math.round(kosztOgloszenia - (kosztOgloszenia * 0.2)); //naliczenie rabatu
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
         } else {
             wynik.innerHTML = "Koszt ogłoszeń wyniesie: " + kosztOgloszenia + " zł.";
@@ -379,7 +381,7 @@ function kosztCegiel() {
     var wagaCegly = liczbaCegiel * 1.5;
     var kosztCeglyPremium = kosztCegly + (kosztCegly * 0.3);
     var wagaCeglyPremium = liczbaCegiel * 1.75;
-    for (var i = 0, j = 0.5; i < wagaCegly; i += 10, j += 0.5) {
+    for (var i = 0, j = 0.5; i < wagaCegly; i += 10, j += 0.5) { //wzrost cenu za kazde rozpoczete 10km
         cenaZaKm = j;
     }
     var kosztDostawy = cenaZaKm * ileKm;
@@ -414,12 +416,12 @@ function starszy() {
     const wynikStarszy = document.getElementById("wynik");
     const data1 = document.getElementById("data1").value;
     const data2 = document.getElementById("data2").value;
-    const osoba1 = Date.parse(data1);
-    const osoba2 = Date.parse(data2);
-    if (isNaN(osoba1) || isNaN(osoba2)) {
+    const osoba1 = Date.parse(data1); // Parsowanie textu na date
+    const osoba2 = Date.parse(data2); // Parsowanie textu na date
+    if (isNaN(osoba1) || isNaN(osoba2)) { //Sprawdzenie czy daty zostały wprowadzone poprawnie
         wynikStarszy.innerHTML = "Proszę wprowadzić poprawne daty w formacie RRRR-MM-DD.";
     } else {
-        if (osoba1 < osoba2) {
+        if (osoba1 < osoba2) { //Porownanie dat
             wynikStarszy.innerHTML = "Starsza jest osoba nr. 1";
         } else {
             wynikStarszy.innerHTML = "Starsza jest osoba nr. 2";
@@ -433,10 +435,10 @@ function przestepny() {
     const wynik = document.getElementById("wynik");
     var tabLata = Array(600);
     var byl = true;
-    for (var i = 0, j = 0; i < tabLata.length; i++, j += 4) {
+    for (var i = 0, j = 0; i < tabLata.length; i++, j += 4) { //wypełnienie tablicy latami przestępnymi
         tabLata[i] = j;
     }
-    for (var i in tabLata) {
+    for (var i in tabLata) { // Sprawdzenie czy wprowadzony rok znajduje sie w tablicy
         if (tabLata[i] == rok) {
             byl = true;;
             break;
@@ -459,13 +461,13 @@ function sila() {
     if ((dlugoscHasla <= 4)) {
         wynik.innerHTML = "Hasło słabe!!!";
     } else if (dlugoscHasla <= 8) {
-        if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) {
+        if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) { // Warunek sprawdzający czy hasło spełnia wymogi silnego hasła
             wynik.innerHTML = "Hasło słabe - brak wymaganego elementu";
         } else {
             wwynik.innerHTML = "Hasło średnie";
         }
     } else {
-        if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) {
+        if (!/[0-9]/.test(haslo) || !/[A-Z]/.test(haslo) || !/[a-z]/.test(haslo) || !/[^a-zA-Z0-9]/.test(haslo)) { // Warunek sprawdzający czy hasło spełnia wymogi silnego hasła
             wynikSila.innerHTML = "Hasło słabe - brak wymaganego elementu";
         } else {
             wynik.innerHTML = "Hasło mocne";
@@ -480,7 +482,7 @@ function trojkat() {
     const b = document.getElementById("bok2").value;
     const c = document.getElementById("bok3").value;
     const wynik = document.getElementById("wynik");
-    if (a + b > c && a + c > b && b + c > a) {
+    if (a + b > c && a + c > b && b + c > a) { //Sprawdzenie czy wprowadzone wartosci spełniają potrzebne wymagania potrzebne do stworzenia trójkąta
         wynik.innerHTML = "Z podanych długości boków można utworzyć trójkąt.";
     } else {
         wynik.innerHTML = "Z podanych długości boków nie można utworzyć trójkąta.";
@@ -503,9 +505,9 @@ function trojkat() {
 //Szyfrowanie znaków
 function szyfr() {
     const wynikszyfr = document.getElementById("wynik");
-    var char = event.which || event.keyCode;
+    var char = event.which || event.keyCode; // przypisanie zmiennej wartosci ASCII znaku wlasnie wprowadzonego z klawiatury
     //console.log(char);
-    if (char >= 65 && char <= 90) {
+    if (char >= 65 && char <= 90) { //Jeśli znak spełnia wymagania tj. a-z to zostaje zastąpiony znakiem o wartości większej o 2 w ASCII
         char += 2;
         wynikszyfr.innerHTML += String.fromCharCode(char);
     } else {
