@@ -1,50 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styl.css">
     <title>Kontakt</title>
 </head>
+
 <body>
     <div class="div" id="menu_bar">
-        <a href="Portfolio.html" class="link" ><i class="fa-solid fa-house fa-2xl"></i></a>
-        <a href="Omnie.html" class="link" >O mnie</a>
-        <a href="Projekty.html"  class="link" >Projekty</a>
-        <a href="JakSieUcze.html"  class="link" >Jak się uczę</a>
-        <a href="Kontakt.html"  class="link" >Kontakt</a>
+        <a href="Portfolio.html" class="link"><i class="fa-solid fa-house fa-2xl"></i></a>
+        <a href="Omnie.html" class="link">O mnie</a>
+        <a href="Projekty.html" class="link">Projekty</a>
+        <a href="JakSieUcze.html" class="link">Jak się uczę</a>
+        <a href="Kontakt.html" class="link">Kontakt</a>
     </div>
-<section id="kontakt">
+    <section id="kontakt">
 
-    <h1>KONTAKT</h1>
-    
-    <div id="divKontakt">
-        <form action="kontaktowy" method="get" >
-            <label for="telNumber">Numer telefonu:</label>
-            <input id="telNumber" type="value" value="576 692 912" disabled><br>
-            <label for="email">Adres e-mail:</label>
-            <input id="email" type="value" value="kami3x3s@gmail.com" disabled><br><br>
+        <h1>KONTAKT</h1>
 
-            <input type="email" name="e-mail" id="userEmail" placeholder="Twój e-mail"><br>
-            <textarea name="e-mail" id="contents" placeholder="Treść" autocomplete="off"></textarea><br>
-            <button type="button" id="sendBtn">Wyślij</button>
-        </form>
-    </div>
-</section>
-    
+        <label for="telNumber">Numer telefonu:</label>
+        <input id="telNumber" type="text" value="576 692 912" disabled><br>
+        <label for="email">Adres e-mail:</label>
+        <input id="email" type="text" value="kami3x3s@gmail.com" disabled><br><br>
+
+        <div id="divKontakt">
+            <form class="form" id="contactForm" method="post" action="mail.php">
+                <div class="formRow">
+                    <label for="name">Imię (min. 3 znaki):</label><br>
+                    <input type="text" name="name" required pattern=.{3,} id="name">
+                </div>
+                <div class="formRow">
+                    <label for="userEmail">Email:</label><br>
+                    <input type="email" name="userEmail" required id="userEmail">
+                </div>
+                <div class="formRow">
+                    <label for="message">Wiadomość:</label><br>
+                    <textarea name="message" required data-error-text="Musisz wypełnić pole" id="message"></textarea>
+                </div>
+                <button type="submit" class="submitBtn">
+                    Wyślij
+                </button>
+
+            </form>
+            <p class="msgStatus"></p>
+        </div>
+    </section>
+
     <div class="div" id="social_media">
-        <a href="https://www.facebook.com/kamil.gawrys.92" target="_blank" class="link"><i class="fa-brands fa-facebook fa-2xl"></i></a>
-        <a href="https://www.instagram.com/kami1.gk/" target="_blank" class="link"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+        <a href="https://www.facebook.com/kamil.gawrys.92" target="_blank" class="link"><i
+                class="fa-brands fa-facebook fa-2xl"></i></a>
+        <a href="https://www.instagram.com/kami1.gk/" target="_blank" class="link"><i
+                class="fa-brands fa-instagram fa-2xl"></i></a>
         <a href="https://twitter.com/ex3ss" target="_blank" class="link"><i class="fa fa-times fa-2xl"></i></a>
     </div>
-
+    <script src="js/script_kontakt.js"></script>
 </body>
+
 </html>

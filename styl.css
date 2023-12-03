@@ -1,47 +1,52 @@
 * {
-    font-family: 'Merriweather', serif;
-  }
-  body{
-    margin: 0;
-    justify-content: center;
-    text-align: center;
-    background-image: url("img/background.jpg");
-    color: white;
-    align-items: center;
-  }
+  font-family: 'Merriweather', serif;
+}
+
+body {
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+  background-image: url("img/background.jpg");
+  color: white;
+  align-items: center;
+}
 
 /* Strona główna */
-#menu_bar{
-    margin-top:  3vh;
-    margin-bottom: 3vh;
-    padding: 3vh;
-    height: 5vh;
+#menu_bar {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  padding: 3vh;
+  height: 5vh;
 }
-.link{
-    margin-left: 7vw;
-    letter-spacing: 0.1vw;
-    font-size: larger;
-    text-decoration: none;
-    color: aquamarine;
-    transition: transform 0.3s ease-in-out;
-    display: inline-block;
+
+.link {
+  margin-left: 7vw;
+  letter-spacing: 0.1vw;
+  font-size: larger;
+  text-decoration: none;
+  color: aquamarine;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
 }
-.link:hover{
+
+.link:hover {
   color: rgb(146, 197, 4);
   text-shadow: 2px 2px 5px black;
   transform: scale(1.1);
 }
 
-#main_section{
+#main_section {
   display: grid;
   grid-template-columns: auto auto;
   height: 77vh;
 }
-.logo{
+
+.logo {
   width: 5.2vw;
   height: 10.7vh;
 }
-#ikony_umiejetnosci{
+
+#ikony_umiejetnosci {
   width: 50vw;
   display: grid;
   grid-template-columns: 1fr;
@@ -49,7 +54,8 @@
   align-items: center;
   position: relative;
 }
-#main_section h3{
+
+#main_section h3 {
   margin: 0 3vw 0 8vw;
   position: relative;
 }
@@ -57,52 +63,60 @@
 #present {
   width: 5.2vw;
   height: 10.7vh;
-  position: absolute; 
-  left: 55%; 
+  position: absolute;
+  left: 55%;
   top: 35%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   transition: background-image 2s ease-in-out;
 }
-.image1{
+
+.image1 {
   background-image: url('img/html.png');
-  background-size: 5.2vw 10.7vh; 
-} 
-.image2{
+  background-size: 5.2vw 10.7vh;
+}
+
+.image2 {
   background-image: url('img/css.png');
-  background-size: 5.2vw 10.7vh; 
+  background-size: 5.2vw 10.7vh;
 }
- .image3 {
-    background-image: url('img/js.png');
-    background-size: 5.2vw 10.7vh; 
+
+.image3 {
+  background-image: url('img/js.png');
+  background-size: 5.2vw 10.7vh;
 }
-#futureDivs{
+
+#futureDivs {
   position: relative;
   bottom: 95%;
   left: 50%;
 }
-.future{
+
+.future {
   position: absolute;
 }
-#mapa_mysli{
+
+#mapa_mysli {
   width: 50vw;
 }
-#social_media{
+
+#social_media {
   margin-top: 2vh;
 }
 
 /*Podstrona PROJEKTY*/
-#projekt_bar{
+#projekt_bar {
   position: absolute;
-  background: rgba( 175, 255, 212, 0.5);
+  background: rgba(175, 255, 212, 0.5);
   width: 10vw;
-  height: 75vh; 
+  height: 75vh;
   color: black;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
   margin-bottom: 3vh;
 }
-.button_project{
+
+.button_project {
   width: 6vw;
   height: 12vh;
   border-radius: 60px;
@@ -110,21 +124,23 @@
   margin-bottom: 2vh;
   transition: transform 0.3s ease-in-out;
 }
+
 .button_project:hover {
   transform: scale(1.1);
   border: dashed 2px black;
 }
 
-#bodyChief_project_button{
+#bodyChief_project_button {
   background-image: url(img/bodyChief_logo.png);
   background-size: 6vw 12vh;
 }
-#kryptoPage_project_button{
+
+#kryptoPage_project_button {
   background-image: url(img/kryptoPage_logo.png);
   background-size: 6vw 12vh;
 }
 
-#project_description{
+#project_description {
   width: 90vw;
   height: 75vh;
   margin-bottom: 3vh;
@@ -132,37 +148,45 @@
   left: 10vw;
   border-top: solid 2px;
   border-bottom: solid 2px;
-  border-color: rgba( 175, 255, 212, 0.5);
+  border-color: rgba(175, 255, 212, 0.5);
   border-radius: 20px;
   overflow: hidden;
   overflow-y: scroll;
 }
-.description{
+
+.description {
   padding: 2vh 3vw 2vh 3vw;
 }
-.description img{
+
+.description img {
   width: 40vw;
   height: 35vh;
-  float: left; 
+  float: left;
   margin: 0 20px 20px 0;
   border-radius: 10px;
 }
-.description h1{
+
+.description h1 {
   color: rgb(145, 255, 255);
 }
-.description h2{
-  color: red;
+
+.description h2 {
+  color: yellow;
   display: block;
   text-align: left;
   clear: both;
+  text-shadow: 1px 1px black;
 }
-.description h4{
+
+.description h4 {
   clear: both;
   color: rgb(145, 255, 255);
 }
-.description img + .description p {
+
+.description img+.description p {
   margin-top: 15vh;
 }
+
 #project_description::-webkit-scrollbar {
   width: 12px;
 }
@@ -177,113 +201,147 @@
   border-radius: 50px;
 }
 
-#wprowadzenie{
+#wprowadzenie {
   padding: 5vh 10vw;
   color: whitesmoke;
 }
-.description b{
+
+.description b {
   color: rgb(229, 255, 0);
   text-shadow: 2px 2px 5px black;
   position: relative;
   top: 15vh;
 }
-#bodyChief_description{
+
+#bodyChief_description {
   display: none;
 }
-#kryptoPage_description{
+
+#kryptoPage_description {
   display: none;
 }
 
 /*Strona JakSięUczę*/
-#script_presentation{
+#script_presentation {
   width: 100vw;
   height: 77vh;
 }
+
 /*Styl dla Kalkulatora */
-#text{
+#text {
   width: 14.3vw;
   height: 5vh;
   text-align: right;
   font-size: 14px;
   border-color: black;
 }
-.btn{
+
+.btn {
   width: 3.5vw;
   height: 5vh;
   margin-top: 3px;
   font-weight: 600;
   font-size: large;
 }
-#cl{
+
+#cl {
   width: 11vw;
   background-color: rgb(177, 173, 173);
   color: black;
 }
-#zero, #seven, #eight, #nine, #four, #five, #six, #one, #two, #three, #dot {
+
+#zero,
+#seven,
+#eight,
+#nine,
+#four,
+#five,
+#six,
+#one,
+#two,
+#three,
+#dot {
   background-color: rgb(82, 80, 80);
   color: black;
-  
+
 }
-#zero{
+
+#zero {
   width: 7.2vw;
 }
-#sub, #mul, #add, #minus, #equal{
+
+#sub,
+#mul,
+#add,
+#minus,
+#equal {
   background-color: rgb(255, 110, 57);
 }
+
 /* ---------------*/
 
-#labelSelect{
+#labelSelect {
   color: gold;
   font-size: 1.2rem;
   text-shadow: 1px 1px black;
 }
-select{
+
+select {
   margin-top: 3vh;
 }
-#script_presentation h3{
+
+#script_presentation h3 {
   color: gold;
   font-size: 1.5em;
   margin-bottom: 10px;
   text-shadow: 1px 1px black;
 }
-#script_presentation p{
+
+#script_presentation p {
   margin-bottom: 15px
 }
 
-#wynik{
+#wynik {
   margin-top: 3vh;
   color: gold;
   display: block;
   font-size: 1.1rem;
 }
-.zadania{
+
+.zadania {
   width: 40vw;
   position: relative;
   left: 31%;
 }
-ul{
+
+ul {
   font-size: 0.8rem;
 }
-label{
+
+label {
   color: yellow;
 }
 
 /* KONTAKT*/
-#kontakt{
+#kontakt {
   width: 100vw;
   height: 77vh;
 }
-#divKontakt{
-  padding-top: 7vh;
+
+#divKontakt {
   font-size: 1.2rem;
+  margin-top: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#kontakt h1{
+
+#kontakt h1 {
   color: yellow;
 }
-#telNumber, #email{
+
+#telNumber,
+#email {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   color: white;
@@ -291,54 +349,110 @@ label{
   text-align: left;
 }
 
-#userEmail{
-  width: 385px;
-  height: 2.5vh;
-  margin: 0.2vh;
+.form {
+  display: block;
+  justify-content: center;
+  align-self: center;
 }
-#contents{
+
+.formRow {
   width: 385px;
-  height: 25vh;
-  margin: 0.2vh;
+  text-align: left;
+}
+
+.form input,
+.form textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 2px;
+  border: 2px solid hsl(0, 0%, 67%);
+}
+
+#message {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: tomato;
+  width: 70px;
+  height: 35px;
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: hsl(220, 100%, 50%);
+}
+
+.msgStatus {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  padding: 15px;
+  width: 385px;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+.success {
+  display: flex;
+  background-color: hsl(143, 83%, 55%);
+}
+
+.error {
+  display: flex;
+  background-color: hsl(9, 100%, 64%);
 }
 
 /* O Mnie */
-#me{
+#me {
   height: 77vh;
   width: 80vw;
   overflow: hidden;
   overflow-y: scroll;
   margin-left: 10vw;
 }
-#me h2{
+
+#me h2 {
   color: yellow;
 }
-#me h1{
+
+#me h1 {
   color: aquamarine;
 }
-#myPic{
-  width: 15vw; 
-  height: 30vh; 
+
+#myPic {
+  width: 15vw;
+  height: 30vh;
   float: left;
   border-radius: 20%;
 }
-#myPic:hover{
+
+#myPic:hover {
   box-shadow: 1px 1px 1px 1px black;
 }
-#przedstawienie p{
+
+#przedstawienie p {
   margin: 2vw;
 }
-#cechy{
+
+#cechy {
   clear: both;
   text-align: left;
   float: left;
   margin-left: 15vw;
 }
-#skills{
+
+#skills {
   text-align: left;
   float: right;
   margin-right: 15vw;
 }
+
 #me::-webkit-scrollbar {
   width: 12px;
 }
@@ -352,7 +466,8 @@ label{
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
 }
-.kwalifikacje{
+
+.kwalifikacje {
   width: 7vw;
   height: 14vh;
   justify-content: end;
@@ -365,60 +480,70 @@ label{
   body {
     font-size: 14px;
   }
-/* PORTFOLIO */
+
+  /* PORTFOLIO */
   #ikony_umiejetnosci {
-    width: 80vw; 
+    width: 80vw;
     left: 10vw;
   }
 
   #main_section {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     overflow: hidden;
     overflow-y: scroll;
   }
+
   #main_section::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   #main_section::-webkit-scrollbar-thumb {
     background-color: rgb(29, 28, 28);
     border-radius: 50px;
   }
-  
+
   #main_section::-webkit-scrollbar-track {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
   }
-  #present{
+
+  #present {
     position: relative;
   }
-  #mapa_mysli{
+
+  #mapa_mysli {
     position: relative;
     left: 29vw;
     top: 4vh;
   }
-  .future{
+
+  .future {
     position: relative;
     top: 20%;
     left: 1vw;
   }
+
   /* Projekty */
-  h3{
+  h3 {
     size: 10px;
     position: relative;
     word-wrap: break-word;
   }
-  .button_project{
+
+  .button_project {
     left: 25%;
     width: 4vw;
     height: 8vh;
     display: block;
     position: relative;
   }
-  #bodyChief_project_button, #kryptoPage_project_button{
+
+  #bodyChief_project_button,
+  #kryptoPage_project_button {
     background-size: 4vw 8vh;
   }
-  #script_presentation{
+
+  #script_presentation {
     width: 85vw;
     height: 77vh;
     position: relative;
@@ -426,24 +551,25 @@ label{
     overflow: hidden;
     overflow-y: scroll;
   }
+
   #script_presentation::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   #script_presentation::-webkit-scrollbar-thumb {
     background-color: rgb(29, 28, 28);
     border-radius: 50px;
   }
-  
+
   #script_presentation::-webkit-scrollbar-track {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
   }
-  .list{
+
+  .list {
     margin: 0%;
     position: relative;
     right: 28%;
   }
-  
-}
 
+}
