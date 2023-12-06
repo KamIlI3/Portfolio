@@ -34,3 +34,53 @@ function logoSwipe() {
 
     setTimeout(logoSwipe, 3000); //ustawienie cooldown na funkcje 2,5s
 }
+
+//Mapa myśli
+function pickOne(id) {
+    const mindMapImg = document.getElementById("mindMapImg");
+    mindMapImg.style.opacity = 0;
+    mindMapImg.style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
+    setTimeout(() => {
+        mindMapImg.style.display = "none";   // Zmiana display na none po pewnym czasie
+    }, 1000);
+
+    const mindsClouds = document.querySelectorAll('.mindsClouds');
+    mindsClouds.forEach(function (cloud) {
+        cloud.style.opacity = 0;
+        cloud.style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
+        setTimeout(() => {
+            cloud.style.display = "none";   // Zmiana display na none po pewnym czasie
+        }, 1000);
+    });
+    var wybranaZawartosc = document.getElementById(id + '1');
+    var wybranaZawartoscBC = window.getComputedStyle(document.getElementById(id)).backgroundColor;
+    if (wybranaZawartosc) {
+        setTimeout(() => {
+            wybranaZawartosc.style.display = 'flex';
+            wybranaZawartosc.style.justifyContent = "center";
+            wybranaZawartosc.style.alignItems = "center";
+            wybranaZawartosc.style.flexDirection = "column";
+            wybranaZawartosc.style.margin = 0;
+            wybranaZawartosc.style.width = "auto";
+            wybranaZawartosc.style.height = "60vh";
+            wybranaZawartosc.style.padding = "3%";
+            wybranaZawartosc.style.backgroundColor = wybranaZawartoscBC;
+            wybranaZawartosc.style.color = "black";
+            wybranaZawartosc.style.opacity = 0; // Ustawienie początkowej wartości na 0
+            wybranaZawartosc.style.borderRadius = "15%";
+            wybranaZawartosc.style.transition = "opacity 2s ease-in-out"; // Dodanie animacji
+        }, 1000);
+        setTimeout(() => {
+            wybranaZawartosc.style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
+        }, 1050);
+    }
+}
+
+function mindsSwap() {
+    const zawartosc = document.getElementsByClassName('zawartosc');
+    if (aktualnyIndex < zawartosc.length - 1) {
+        zawartosc[aktualnyIndex].style.display = 'none';
+        zawartosc[aktualnyIndex + 1].style.display = 'block';
+        aktualnyIndex++;
+    }
+}

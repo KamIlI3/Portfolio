@@ -31,37 +31,41 @@
         <a href="JakSieUcze.html" class="link">Jak się uczę</a>
         <a href="Kontakt.html" class="link">Kontakt</a>
     </div>
-    <section id="kontakt">
+    <section class="main_section">
+        <div id="kontakt">
 
-        <h1>KONTAKT</h1>
+            <h1>KONTAKT</h1>
 
-        <label for="telNumber">Numer telefonu:</label>
-        <input id="telNumber" type="text" value="576 692 912" disabled><br>
-        <label for="email">Adres e-mail:</label>
-        <input id="email" type="text" value="kami3x3s@gmail.com" disabled><br><br>
+            <label for="telNumber">Numer telefonu:</label>
+            <input id="telNumber" type="text" value="576 692 912" disabled><br>
+            <label for="email">Adres e-mail:</label>
+            <input id="email" type="text" value="kami3x3s@gmail.com" disabled><br><br>
 
-        <div id="divKontakt">
-            <form class="form" id="contactForm" method="post" action="mail.php">
-                <div class="formRow">
-                    <label for="name">Imię (min. 3 znaki):</label><br>
-                    <input type="text" name="name" required pattern=.{3,} id="name">
-                </div>
-                <div class="formRow">
-                    <label for="userEmail">Email:</label><br>
-                    <input type="email" name="userEmail" required id="userEmail">
-                </div>
-                <div class="formRow">
-                    <label for="message">Wiadomość:</label><br>
-                    <textarea name="message" required data-error-text="Musisz wypełnić pole" id="message"></textarea>
-                </div>
-                <button type="submit" class="submitBtn">
-                    Wyślij
-                </button>
+            <div id="divKontakt">
+                <form class="form" id="contactForm" method="post" action="mail.php">
+                    <div class="formRow">
+                        <label for="name">Imię (min. 3 znaki):</label><br>
+                        <input type="text" name="name" required pattern=.{3,} id="name">
+                    </div>
+                    <div class="formRow">
+                        <label for="userEmail">Email:</label><br>
+                        <input type="email" name="userEmail" required id="userEmail">
+                    </div>
+                    <div class="formRow">
+                        <label for="message">Wiadomość:</label><br>
+                        <textarea name="message" required data-error-text="Musisz wypełnić pole"
+                            id="message"></textarea>
+                    </div>
+                    <button type="submit" class="submitBtn">
+                        Wyślij
+                    </button>
 
-            </form>
-            <p class="msgStatus"></p>
+                </form>
+                <p class="msgStatus"></p>
+            </div>
         </div>
     </section>
+
 
     <div class="div" id="social_media">
         <a href="https://www.facebook.com/kamil.gawrys.92" target="_blank" class="link"><i
