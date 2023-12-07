@@ -36,24 +36,34 @@ function logoSwipe() {
 }
 
 //Mapa myśli
+const arrowDown = document.querySelector('.arrowDown');
+const mindsClouds = document.querySelectorAll('.mindsClouds');
+const mindMapImg = document.getElementById("mindMapImg");
+var mindMapImgState = window.getComputedStyle(mindMapImg);
+var mindsCloudsState = "";
+mindsClouds.forEach(function (cloud) {
+    mindsCloudsState = window.getComputedStyle(cloud);
+});
+const zawartosc = document.getElementsByClassName('zawartosc');
+var wybranaZawartosc = "";
+var currentDivIndex = 0;
 function pickOne(id) {
-    const mindMapImg = document.getElementById("mindMapImg");
+
     mindMapImg.style.opacity = 0;
-    mindMapImg.style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
+    mindMapImg.style.transition = "opacity 0.5s ease-in-out"; // Dodanie animacji
     setTimeout(() => {
         mindMapImg.style.display = "none";   // Zmiana display na none po pewnym czasie
     }, 1000);
 
-    const mindsClouds = document.querySelectorAll('.mindsClouds');
+
     mindsClouds.forEach(function (cloud) {
         cloud.style.opacity = 0;
-        cloud.style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
+        cloud.style.transition = "opacity 0.5s ease-in-out"; // Dodanie animacji
         setTimeout(() => {
             cloud.style.display = "none";   // Zmiana display na none po pewnym czasie
         }, 1000);
     });
-    var wybranaZawartosc = document.getElementById(id + '1');
-    var wybranaZawartoscBC = window.getComputedStyle(document.getElementById(id)).backgroundColor;
+    wybranaZawartosc = document.getElementById(id + '1');
     if (wybranaZawartosc) {
         setTimeout(() => {
             wybranaZawartosc.style.display = 'flex';
@@ -64,23 +74,76 @@ function pickOne(id) {
             wybranaZawartosc.style.width = "auto";
             wybranaZawartosc.style.height = "60vh";
             wybranaZawartosc.style.padding = "3%";
-            wybranaZawartosc.style.backgroundColor = wybranaZawartoscBC;
             wybranaZawartosc.style.color = "black";
             wybranaZawartosc.style.opacity = 0; // Ustawienie początkowej wartości na 0
             wybranaZawartosc.style.borderRadius = "15%";
-            wybranaZawartosc.style.transition = "opacity 2s ease-in-out"; // Dodanie animacji
+            wybranaZawartosc.style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
         }, 1000);
         setTimeout(() => {
             wybranaZawartosc.style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
+            currentDivIndex = Array.from(zawartosc).indexOf(wybranaZawartosc);
         }, 1050);
     }
 }
 
-function mindsSwap() {
-    const zawartosc = document.getElementsByClassName('zawartosc');
-    if (aktualnyIndex < zawartosc.length - 1) {
-        zawartosc[aktualnyIndex].style.display = 'none';
-        zawartosc[aktualnyIndex + 1].style.display = 'block';
-        aktualnyIndex++;
+function swipeRight() {
+    zawartosc[currentDivIndex].style.display = 'none';
+
+    // Przejście do następnego diva
+    currentDivIndex = (currentDivIndex + 1) % zawartosc.length;
+
+    // Wyświetlenie następnego diva
+    setTimeout(() => {
+        zawartosc[currentDivIndex].style.display = 'flex';
+        zawartosc[currentDivIndex].style.justifyContent = "center";
+        zawartosc[currentDivIndex].style.alignItems = "center";
+        zawartosc[currentDivIndex].style.flexDirection = "column";
+        zawartosc[currentDivIndex].style.margin = 0;
+        zawartosc[currentDivIndex].style.width = "auto";
+        zawartosc[currentDivIndex].style.height = "60vh";
+        zawartosc[currentDivIndex].style.padding = "3%";
+        zawartosc[currentDivIndex].style.color = "black";
+        zawartosc[currentDivIndex].style.opacity = 0; // Ustawienie początkowej wartości na 0
+        zawartosc[currentDivIndex].style.borderRadius = "15%";
+        zawartosc[currentDivIndex].style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
+    }, 400);
+    setTimeout(() => {
+        zawartosc[currentDivIndex].style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
+    }, 450);
+}
+function swipeLeft() {
+    zawartosc[currentDivIndex].style.display = 'none';
+
+    // Przejście do następnego diva
+    currentDivIndex = (currentDivIndex - 1) % zawartosc.length;
+    if (currentDivIndex == -1) {
+        currentDivIndex = 6;
+    }
+    // Wyświetlenie następnego diva
+    setTimeout(() => {
+        zawartosc[currentDivIndex].style.display = 'flex';
+        zawartosc[currentDivIndex].style.justifyContent = "center";
+        zawartosc[currentDivIndex].style.alignItems = "center";
+        zawartosc[currentDivIndex].style.flexDirection = "column";
+        zawartosc[currentDivIndex].style.margin = 0;
+        zawartosc[currentDivIndex].style.width = "auto";
+        zawartosc[currentDivIndex].style.height = "60vh";
+        zawartosc[currentDivIndex].style.padding = "3%";
+        zawartosc[currentDivIndex].style.color = "black";
+        zawartosc[currentDivIndex].style.opacity = 0; // Ustawienie początkowej wartości na 0
+        zawartosc[currentDivIndex].style.borderRadius = "15%";
+        zawartosc[currentDivIndex].style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
+    }, 400);
+    setTimeout(() => {
+        zawartosc[currentDivIndex].style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
+    }, 450);
+}
+function goBack() {
+    mindMapImg.style = mindMapImgState;
+    mindsClouds.forEach(function (cloud) {
+        cloud.style = mindsCloudsState;
+    });
+    for (let i = 0; i < zawartosc.length; i++) {
+        zawartosc[i].style.display = 'none';
     }
 }

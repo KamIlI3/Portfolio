@@ -40,8 +40,8 @@
                     w którym będą umieszczane moje kolejne mniejsze lub większe projekty.
                 </h3>
             </div>
-            
-            
+
+
             <div id="futureDivs">
                 <div class="future">
                     <img src="img/angular.png" alt="AngularJS" class="logo">
@@ -53,7 +53,7 @@
                     <img src="img/react.png" alt="ReactJS" class="logo">
                 </div>
                 <h3>Kolenym krokiem i celem w drodze rozwoju jest nauka framework oraz bibliotek</h3>
-                
+
             </div>
 
         </div>
@@ -63,78 +63,116 @@
             <div id="mindMap">
                 <img src="img/Mind_map.png" alt="Mind-map-bro" id="mindMapImg">
 
-                <div class="mindsClouds" id="projects" onclick="pickOne('projects')"><p>Projekty</p></div>
-                <div class="zawartosc" id="projects1" onclick="mindsSwap()"><h2>Do tej pory zrobiłem 3 projekty:</h2>
-                <ul>
-                    <li>Body Chief Page</li>
-                    <li>Krypto Page</li>
-                </ul>
-                <p>Trzecim jest aktualne "Portfolio" <br>
-                    <a
-                        href="Projekty.html" style="margin: 0; color: red;"
-                        target="_blank">Tutaj</a> dowiesz się wiecej!</p>
+                <div class="mindsClouds" id="journey" onclick="pickOne('journey')">
+                    <p>Journey</p>
                 </div>
-
-                <div class="mindsClouds" id="journey" onclick="pickOne('journey')"><p>Journey</p></div>
                 <div class="zawartosc" id="journey1">
                     <h3>Podczas nauki korzystałem z różnych zasobów i sposobów zdobycia umiejętności:</h3>
-                    <ul>
-                        <li>Zajęcia w szkole średniej i na studiach</li>
-                        <li>Poradniki i kursy na YT</li>
-                        <li>Projekty na rzecz studiów</li>
-                        <li>Rozwiązywanie zadań wymyślonych przez siebie oraz tych znalezionych w internecie</li>
-                    </ul>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
+                        <ul>
+                            <li>Zajęcia w szkole średniej i na studiach</li>
+                            <li>Poradniki i kursy na YT</li>
+                            <li>Projekty na rzecz studiów</li>
+                            <li>Rozwiązywanie zadań wymyślonych przez siebie oraz tych znalezionych w internecie</li>
+                        </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
                     <p>Z całą pewnością ta droga z każdym dniem będzie się wydłużała, <br>
                         a kroki w niej stawiane będą coraz większe i efektywniejsze</p>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
+                </div>
+                
+                <div class="mindsClouds" id="projects" onclick="pickOne('projects')">
+                    <p>Projekty</p>
+                </div>
+                <div class="zawartosc" id="projects1">
+                    <h2>Do tej pory zrobiłem 3 projekty:</h2>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
+                        <ul>
+                            <li>Body Chief Page</li>
+                            <li>Krypto Page</li>
+                        </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
+                    <p>Trzecim jest aktualne "Portfolio" <br>
+                        <a href="Projekty.html" style="margin: 0; color: red;" target="_blank">Tutaj</a> dowiesz się
+                        wiecej!
+                    </p>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
                 </div>
 
-                <div class="mindsClouds" id="contact" onclick="pickOne('contact')"><p>Kontakt</p></div>
-                <div class="zawartosc" id="contact1">
-                    <h2>Kontakt</h2>
-                    <p>Telefon: 576 692 912</p><br>
-                    <p>E-mail: kami3x3s@gmail.com</p><br>
-                    <p>Po więcej przejdz<a href="Kontakt.html" style="margin: 0; color: red;"
-                        target="_blank">Tutaj</a></p>
+                <div class="mindsClouds" id="experience" onclick="pickOne('experience')">
+                    <p>Doświadczenie</p>
+                </div>
+                <div class="zawartosc" id="experience1">
+                    <h3>Mimo, że moje doświadczenie nie jest jeszcze zbyt wielkie, to mogę się jednak pochwalić zdobytą
+                        wiedzą za pomocą:</h3>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
+                        <ul>
+                            <li>Dziesiątki godzin spędzonych w szkole średniej na nauce front-end</li>
+                            <li>Kolejne godziny poświęcone nauce na studiach</li>
+                            <li>Zawiętość, chęć i ambicja, która pozwala każdego dnia zbobywać doswiadczenie poprzez:
+                                <ul>
+                                    <li>Samodzielna naukę z kursów</li>
+                                    <li>Tworzenie własnych projektów</li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
+
                 </div>
 
-                <div class="mindsClouds" id="skills" onclick="pickOne('skills')"><p>Umiejętności</p></div>
+                <div class="mindsClouds" id="skills" onclick="pickOne('skills')">
+                    <p>Umiejętności</p>
+                </div>
                 <div class="zawartosc" id="skills1">
                     <h2>Umiejętności</h2>
-                    <ul>
-                        <li>Znajomość JavaScript</li>
-                        <li>Znajomość HTML5</li>
-                        <li>Znajomość CSS3</li>
-                        <li>Znajomość</li>
-                        <li>Znajomość narzędzi do kontroli wersji, np. Git</li>
-                        <li>Rozumienie zasad responsywnego projektowania</li>
-                        <li>umiejętność współpracy</li>
-                    </ul>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
+                        <ul>
+                            <li>Znajomość JavaScript</li>
+                            <li>Znajomość HTML5</li>
+                            <li>Znajomość CSS3</li>
+                            <li>Znajomość</li>
+                            <li>Znajomość narzędzi do kontroli wersji, np. Git</li>
+                            <li>Rozumienie zasad responsywnego projektowania</li>
+                            <li>umiejętność współpracy</li>
+                        </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
                     <p>Praca nad sobą sprawia, że cały czas zbobywam nowe umijejętności i rozwijam te, <br>
                         które już posiadam </p>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
                 </div>
 
-                <div class="mindsClouds" id="hobby" onclick="pickOne('hobby')"><p>Hobby</p></div>
-                <div class="zawartosc" id="hobby1">
-                    Mam wiele zainteresowań, ale w wolnych chwilach najbardziej lubię spędzać czas z przyjaciólmi. <br>
-                    Nie odmówie też wieczoru z dobrym serialem, książką lub gierką. <br>
-                    A oto lista rzeczy dają mi ogrom radości:
-                    <ul>
-                        <li>Piłka nożna</li>
-                        <li>Siłownia</li>
-                        <li>MMA</li>
-                        <li>Projektowanie stron</li>
-                        <li>Gry planszowe</li>
-                        <li>Muzyka</li>
-                    </ul>
-                    <p>Więcej o mnie możesz się dowiedzeć <a href="Omnie.html" style="margin: 0; color: red;"
-                        target="_blank">Tutaj</a></p></p>
+                <div class="mindsClouds" id="targets" onclick="pickOne('targets')">
+                    <p>Cele</p>
                 </div>
-
-                <div class="mindsClouds" id="targets" onclick="pickOne('targets')"><p>Cele</p></div>
                 <div class="zawartosc" id="targets1">
-                    <h2>W niedalekiej przyszłości chciałbym zgłebić swoją wiedzę o frameworkach. <br>
+                    <h3>W niedalekiej przyszłości chciałbym zgłebić swoją wiedzę o frameworkach. <br>
                         Będzie to krok milowy w dalszej karierze. <br>
-                        Moje cele na nadchodzące miesiące:</h2>
+                        Moje cele na nadchodzące miesiące:</h3>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
                         <ul>
                             <li>Poszerzenie repertuaru umiejętności</li>
                             <li>Znalezienie pracy/stażu</li>
@@ -142,22 +180,68 @@
                             <li>Dodanie kolejnych projektów do swojego portfolio</li>
                             <li>Nieustanny rozwój</li>
                         </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
                 </div>
 
-                <div class="mindsClouds" id="experience" onclick="pickOne('experience')"><p>Doświadczenie</p></div>
-                <div class="zawartosc" id="experience1">
-                    <h2>Mimo, że moje doświadczenie nie jest jeszcze zbyt wielkie, to mogę się jednak pochwalić zdobytą wiedzą za pomocą:</h2>
-                    <ul>
-                        <li>Dziesiątki godzin spędzonych w szkole średniej na nauce front-end</li>
-                        <li>Kolejne godziny poświęcone nauce na studiach</li>
-                        <li>Zawiętość, chęć i ambicja, która pozwala każdego dnia zbobywać doswiadczenie poprzez:
-                            <li>Samodzielna naukę z kursów</li>
-                            <li>Tworzenie własnych projektów</li>
-                        </li>
-                    </ul>
-
+                <div class="mindsClouds" id="contact" onclick="pickOne('contact')">
+                    <p>Kontakt</p>
                 </div>
+                <div class="zawartosc" id="contact1">
+                    <h2>Kontakt</h2>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
+                        <ul>
+                            <li>Telefon: 576 692 912</li>
+                            <li>E-mail: kami3x3s@gmail.com</li>
+                        </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
+                    <p>Po więcej przejdz<a href="Kontakt.html" style="margin: 0; color: red;" target="_blank">Tutaj</a>
+                    </p>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
+                </div>
+
+
+
+                <div class="mindsClouds" id="hobby" onclick="pickOne('hobby')">
+                    <p>Hobby</p>
+                </div>
+                <div class="zawartosc" id="hobby1">
+                    <h3>Mam wiele zainteresowań, ale w wolnych chwilach najbardziej lubię spędzać czas z przyjaciólmi.
+                        <br>
+                        Nie odmówie też wieczoru z dobrym serialem, książką lub gierką. <br>
+                        A oto lista rzeczy dają mi ogrom radości:</h3>
+                    <span>
+                        <button class="arrowLeft" onclick="swipeLeft()"><i
+                                class="fa-solid fa-arrow-left fa-2xl"></i></button>
+                        <ul>
+                            <li>Piłka nożna</li>
+                            <li>Siłownia</li>
+                            <li>MMA</li>
+                            <li>Projektowanie stron</li>
+                            <li>Gry planszowe</li>
+                            <li>Muzyka</li>
+                        </ul>
+                        <button class="arrowRight" onclick="swipeRight()"><i
+                                class="fa-solid fa-arrow-right fa-2xl"></i></button>
+                    </span>
+                    <p>Więcej o mnie możesz się dowiedzeć <a href="Omnie.html" style="margin: 0; color: red;"
+                            target="_blank">Tutaj</a></p>
+                    </p>
+                    <button class="arrowDown" onclick="goBack()"><i
+                            class="fa-solid fa-chevron-down fa-2xl"></i></button>
+                </div>
+
             </div>
+
+
         </div>
     </section>
 

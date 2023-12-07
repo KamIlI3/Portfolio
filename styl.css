@@ -147,7 +147,6 @@ img {
 
 .mindsClouds {
   position: absolute;
-  background-color: blue;
   border-radius: 50%;
   bottom: 50%;
   border: 1px dashed;
@@ -173,12 +172,18 @@ img {
   height: 12vh;
   background-color: blanchedalmond;
 }
+#hobby1{
+  background-color: blanchedalmond
+}
 
 #projects {
   bottom: 46%;
   left: 5.4%;
   width: 7vw;
   height: 14vh;
+  background-color: palegreen;
+}
+#projects1{
   background-color: palegreen;
 }
 
@@ -189,6 +194,9 @@ img {
   height: 15vh;
   background-color: burlywood;
 }
+#experience1{
+  background-color: burlywood;
+}
 
 #skills {
   bottom: 83%;
@@ -197,12 +205,19 @@ img {
   height: 9vh;
   background-color: rgb(145, 255, 255);
 }
+#skills1{
+  background-color: rgb(145, 255, 255);
+}
 
 #targets {
   bottom: 65%;
   left: 59%;
   width: 9vw;
   height: 14vh;
+  background-color: khaki;
+ 
+}
+#targets1{
   background-color: khaki;
 }
 
@@ -213,12 +228,18 @@ img {
   height: 14vh;
   background-color: salmon;
 }
+#journey1{
+  background-color: salmon;
+}
 
 #contact {
   bottom: 40%;
   left: 72%;
   width: 8vw;
   height: 14vh;
+  background-color: gainsboro;
+}
+#contact1{
   background-color: gainsboro;
 }
 
@@ -247,7 +268,28 @@ img {
 .zawartosc{
   display: none;
 }
-
+.zawartosc span {
+  width: 100%;
+  margin: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.zawartosc ul{
+  width: 20%;
+  margin: 0 35% 0 35%;
+}
+span .arrowLeft,
+span .arrowRight,
+.arrowDown {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+}
+#experience1 span ul{
+  width: 80%;
+  margin: 0 5% 5% 5%;
+}
 /*Podstrona PROJEKTY*/
 #projekt_bar {
   position: absolute;
