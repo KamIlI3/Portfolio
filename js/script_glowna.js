@@ -53,7 +53,7 @@ function pickOne(id) {
     mindMapImg.style.transition = "opacity 0.5s ease-in-out"; // Dodanie animacji
     setTimeout(() => {
         mindMapImg.style.display = "none";   // Zmiana display na none po pewnym czasie
-    }, 1000);
+    }, 500);
 
 
     mindsClouds.forEach(function (cloud) {
@@ -61,7 +61,7 @@ function pickOne(id) {
         cloud.style.transition = "opacity 0.5s ease-in-out"; // Dodanie animacji
         setTimeout(() => {
             cloud.style.display = "none";   // Zmiana display na none po pewnym czasie
-        }, 1000);
+        }, 500);
     });
     wybranaZawartosc = document.getElementById(id + '1');
     if (wybranaZawartosc) {
@@ -73,70 +73,78 @@ function pickOne(id) {
             wybranaZawartosc.style.margin = 0;
             wybranaZawartosc.style.width = "auto";
             wybranaZawartosc.style.height = "60vh";
-            wybranaZawartosc.style.padding = "3%";
+            wybranaZawartosc.style.padding = "3% 0 3% 0%";
             wybranaZawartosc.style.color = "black";
             wybranaZawartosc.style.opacity = 0; // Ustawienie początkowej wartości na 0
             wybranaZawartosc.style.borderRadius = "15%";
             wybranaZawartosc.style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
-        }, 1000);
+        }, 500);
         setTimeout(() => {
             wybranaZawartosc.style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
             currentDivIndex = Array.from(zawartosc).indexOf(wybranaZawartosc);
-        }, 1050);
+        }, 550);
     }
 }
 
 function swipeRight() {
-    zawartosc[currentDivIndex].style.display = 'none';
+    zawartosc[currentDivIndex].style.display = "none"; // Ustawienie opacity na 0 przed zmianą diva
 
     // Przejście do następnego diva
     currentDivIndex = (currentDivIndex + 1) % zawartosc.length;
 
     // Wyświetlenie następnego diva
     setTimeout(() => {
-        zawartosc[currentDivIndex].style.display = 'flex';
-        zawartosc[currentDivIndex].style.justifyContent = "center";
-        zawartosc[currentDivIndex].style.alignItems = "center";
-        zawartosc[currentDivIndex].style.flexDirection = "column";
-        zawartosc[currentDivIndex].style.margin = 0;
-        zawartosc[currentDivIndex].style.width = "auto";
-        zawartosc[currentDivIndex].style.height = "60vh";
-        zawartosc[currentDivIndex].style.padding = "3%";
-        zawartosc[currentDivIndex].style.color = "black";
-        zawartosc[currentDivIndex].style.opacity = 0; // Ustawienie początkowej wartości na 0
-        zawartosc[currentDivIndex].style.borderRadius = "15%";
-        zawartosc[currentDivIndex].style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
-    }, 400);
-    setTimeout(() => {
         zawartosc[currentDivIndex].style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
-    }, 450);
+    }, 250);
+
+    // Przesunięcie divów w lewo, aby pojawił się następny div
+    setTimeout(() => {
+        zawartosc[currentDivIndex].style.transform = "translateX(0)";
+    }, 200);
+
+    // Przesunięcie aktualnego diva w lewo, aby zniknął
+    zawartosc[currentDivIndex].style.transform = "translateX(100%)";
+    zawartosc[currentDivIndex].style.display = 'flex';
+    zawartosc[currentDivIndex].style.justifyContent = "center";
+    zawartosc[currentDivIndex].style.alignItems = "center";
+    zawartosc[currentDivIndex].style.flexDirection = "column";
+    zawartosc[currentDivIndex].style.margin = 0;
+    zawartosc[currentDivIndex].style.width = "auto";
+    zawartosc[currentDivIndex].style.height = "60vh";
+    zawartosc[currentDivIndex].style.padding = "3% 0 3% 0%";
+    zawartosc[currentDivIndex].style.color = "black";
+    zawartosc[currentDivIndex].style.borderRadius = "15%";
+    zawartosc[currentDivIndex].style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out"; // Dodanie animacji
 }
 function swipeLeft() {
-    zawartosc[currentDivIndex].style.display = 'none';
+    zawartosc[currentDivIndex].style.display = "none"; // Ustawienie opacity na 0 przed zmianą diva
 
     // Przejście do następnego diva
-    currentDivIndex = (currentDivIndex - 1) % zawartosc.length;
-    if (currentDivIndex == -1) {
-        currentDivIndex = 6;
-    }
+    currentDivIndex = (currentDivIndex + 1) % zawartosc.length;
+
     // Wyświetlenie następnego diva
     setTimeout(() => {
-        zawartosc[currentDivIndex].style.display = 'flex';
-        zawartosc[currentDivIndex].style.justifyContent = "center";
-        zawartosc[currentDivIndex].style.alignItems = "center";
-        zawartosc[currentDivIndex].style.flexDirection = "column";
-        zawartosc[currentDivIndex].style.margin = 0;
-        zawartosc[currentDivIndex].style.width = "auto";
-        zawartosc[currentDivIndex].style.height = "60vh";
-        zawartosc[currentDivIndex].style.padding = "3%";
-        zawartosc[currentDivIndex].style.color = "black";
-        zawartosc[currentDivIndex].style.opacity = 0; // Ustawienie początkowej wartości na 0
-        zawartosc[currentDivIndex].style.borderRadius = "15%";
-        zawartosc[currentDivIndex].style.transition = "opacity 1s ease-in-out"; // Dodanie animacji
-    }, 400);
-    setTimeout(() => {
         zawartosc[currentDivIndex].style.opacity = 1; // Zmiana opacity na 1 po pewnym czasie
-    }, 450);
+    }, 250);
+
+    // Przesunięcie divów w lewo, aby pojawił się następny div
+    setTimeout(() => {
+        zawartosc[currentDivIndex].style.transform = "translateX(0)";
+    }, 200);
+
+    // Przesunięcie aktualnego diva w lewo, aby zniknął
+    zawartosc[currentDivIndex].style.transform = "translateX(-100%)";
+    zawartosc[currentDivIndex].style.display = 'flex';
+    zawartosc[currentDivIndex].style.justifyContent = "center";
+    zawartosc[currentDivIndex].style.alignItems = "center";
+    zawartosc[currentDivIndex].style.flexDirection = "column";
+    zawartosc[currentDivIndex].style.margin = 0;
+    zawartosc[currentDivIndex].style.width = "auto";
+    zawartosc[currentDivIndex].style.height = "60vh";
+    zawartosc[currentDivIndex].style.padding = "3% 0 3% 0%";
+    zawartosc[currentDivIndex].style.color = "black";
+    zawartosc[currentDivIndex].style.borderRadius = "15%";
+    zawartosc[currentDivIndex].style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out"; // Dodanie animacji
 }
 function goBack() {
     mindMapImg.style = mindMapImgState;
